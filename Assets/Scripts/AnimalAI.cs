@@ -6,11 +6,13 @@ public class AnimalAI : MonoBehaviour
     
     
     private BiomeManager biomeManager;
+    
     public AnimalData data;
 
     void Start()
     {
         biomeManager = FindAnyObjectByType<BiomeManager>();
+        
     }
 
     public float CurrentStrength
@@ -40,7 +42,24 @@ public class AnimalAI : MonoBehaviour
         float myStrength = this.CurrentStrength;
         if (attackerStrength > myStrength) {
             // numOfTotalAnimals--;
-            Destroy(this);
+            this.Die();
+
         }
     }
+
+    public void Die()
+    {
+        // ADD LATER: increment the score tracker and animal tracker
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D attacker)
+    {
+        AnimalAI attackerAnimal = attacker.GetComponent<AnimalAI>();
+        if (attackerAnimal != null)
+        {
+            Interact(attackerAnimal);
+        }
+    }
+    
 }
