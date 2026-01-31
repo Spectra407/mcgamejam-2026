@@ -47,8 +47,8 @@ public class AnimalAI : MonoBehaviour
     
     public void Interact(AnimalAI attacker)
     {
-        float attackerStrength = attacker.CurrentStrengthTest;
-        float myStrength = this.CurrentStrengthTest;
+        float attackerStrength = attacker.CurrentStrength;
+        float myStrength = this.CurrentStrength;
         if (attackerStrength > myStrength) {
             // numOfTotalAnimals--;
             this.Die();
