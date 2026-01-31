@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33bfccb5be9b523cbd158631610908f, type: 3}
   m_Name: Desert
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
-  biomeName: Desert
-  tileVisual: {fileID: 0}
   type: 0
+  tiles:
+  - {fileID: 11400000, guid: 4caeaa4d662aa5b4bb53a45eed1f2732, type: 2}

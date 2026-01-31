@@ -5,8 +5,27 @@ using UnityEngine.Tilemaps;
 public class BiomeManager : MonoBehaviour
 {
     // Fields
-    public List<BiomeData> allBiomes;   // List of all BiomeData assets, make new Biomes through BiomeData prefabs.
-    public Tilemap biomeTilemap;
+    public List<BiomeData> allBiomes;
+    private Dictionary<BiomeType, List<TileBase>> biomeTypeToTiles;
+    private Dictionary<TileBase, BiomeType> tileToBiomeType;
+
+    private Tilemap biomeTilemap;
+
+    void Start()
+    {
+        biomeTypeToTiles = new();
+        tileToBiomeType = new();
+        foreach (BiomeData biome in allBiomes)
+        {
+            biomeTypeToTiles.Add(biome.type, biome.tiles);
+            foreach (TileBase tile in biome.tiles)
+            {
+                tileToBiomeType.Add(tile, biome.type);
+            }
+        }
+
+        biomeTilemap = gameObject.GetComponent<Tilemap>();
+    }
     
     // Methods
     public BiomeType GetBiomeAtPosition(Vector3 worldPos)
@@ -18,17 +37,23 @@ public class BiomeManager : MonoBehaviour
         {
             Debug.Log("Error: There is no tile here!");
         }
-        // Figure out how to get tile data
-        foreach (var biome in allBiomes)
-        {
-            if (biome.tileVisual == tileAtCell)
-            {
-                return biome.type;
-            }
-        }
         
-        Debug.Log("Error: no biomes match, desert has been given as the dfault value!");
-        
-        return BiomeType.Desert;
+        return TileToBiomeType(tileAtCell);
+    }
+
+    public BiomeType TileToBiomeType(TileBase tile)
+    {
+        return tileToBiomeType[tile];
+    }
+
+    public List<TileBase> BiomeTypeToTiles(BiomeType type)
+    {
+        return biomeTypeToTiles[type];
+    }
+
+    public TileBase RandomTile(BiomeType type)
+    {
+        List<TileBase> tiles = biomeTypeToTiles[type];
+        return tiles[Random.Range(0, tiles.Count - 1)];
     }
 }

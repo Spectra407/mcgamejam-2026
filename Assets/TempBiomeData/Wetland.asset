@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33bfccb5be9b523cbd158631610908f, type: 3}
   m_Name: Wetland
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
-  biomeName: 
+  biomeName: Wetland
   tileVisual: {fileID: 0}
-  type: 0
+  type: 3

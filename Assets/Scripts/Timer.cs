@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +17,8 @@ public class Timer : MonoBehaviour
     {
         if (time > 0)
         {
-            time = Math.Max(time - 10 * Time.deltaTime, 0);
+            time -= Time.deltaTime;
+            if (time < 0) time = 0;
         }
         UpdateText();
     }
