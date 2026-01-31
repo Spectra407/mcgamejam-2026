@@ -2,12 +2,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
-struct Biome {};
-
 public class PaintingHandler : MonoBehaviour
 {
-    Tilemap tilemap;
-    InputAction paintAction;
+    private Tilemap tilemap;
+    private InputAction paintAction;
 
     public TileBase selectedBiome;
 
@@ -24,12 +22,9 @@ public class PaintingHandler : MonoBehaviour
             Vector2 mousePos = Mouse.current.position.ReadValue();
             Vector3 worldCoords = Camera.main.ScreenToWorldPoint(mousePos);
             Vector3Int cellCoords = tilemap.WorldToCell(worldCoords);
-
-            Debug.Log("Mouse: " + mousePos);
-            Debug.Log("World: " + worldCoords);
-            Debug.Log("Cell: " + cellCoords);
             
-            if (tilemap.GetTile(cellCoords).name != selectedBiome.name)
+            TileBase tile = tilemap.GetTile(cellCoords);
+            if (tile != null && tile.name != selectedBiome.name)
             {
                 tilemap.SetTile(cellCoords, selectedBiome);
             }
