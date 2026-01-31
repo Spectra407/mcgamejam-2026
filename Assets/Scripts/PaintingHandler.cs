@@ -30,4 +30,9 @@ public class PaintingHandler : MonoBehaviour
             }
         }
     }
+
+    public void SetSelectedBiome(TileBase biome)
+    {
+        selectedBiome = biome;
+    }
 }
