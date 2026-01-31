@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3927885823360741444
+--- !u!1 &2592323794086770572
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6522564705770893927}
-  - component: {fileID: 1504971554818825967}
-  - component: {fileID: 3892074600096680919}
-  - component: {fileID: 5416703016651025757}
-  - component: {fileID: 8359421919453841238}
+  - component: {fileID: 5548456807574372374}
+  - component: {fileID: 2793329586267409654}
+  - component: {fileID: 5756691290715969760}
+  - component: {fileID: 3601885527653049464}
+  - component: {fileID: 1536764167225542220}
   m_Layer: 0
   m_Name: Roadrunner
   m_TagString: Untagged
@@ -20,29 +20,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6522564705770893927
+--- !u!4 &5548456807574372374
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3927885823360741444}
+  m_GameObject: {fileID: 2592323794086770572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1504971554818825967
+--- !u!50 &2793329586267409654
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3927885823360741444}
+  m_GameObject: {fileID: 2592323794086770572}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -62,13 +62,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &3892074600096680919
+--- !u!58 &5756691290715969760
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3927885823360741444}
+  m_GameObject: {fileID: 2592323794086770572}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -97,15 +97,15 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!212 &5416703016651025757
+  m_Radius: 3
+--- !u!212 &3601885527653049464
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3927885823360741444}
+  m_GameObject: {fileID: 2592323794086770572}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -157,16 +157,16 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &8359421919453841238
+--- !u!114 &1536764167225542220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3927885823360741444}
+  m_GameObject: {fileID: 2592323794086770572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1a98732a5b9c1635ab80e3cd1608259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAI
-  data: {fileID: 11400000, guid: 6eee6e4e10296ad6fb95553e03d8c186, type: 2}
+  data: {fileID: 11400000, guid: 44130d354ac75d4148ae6f4d990cac94, type: 2}
