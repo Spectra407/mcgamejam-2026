@@ -7,8 +7,8 @@ public class Animal : MonoBehaviour
     // public sound dieSound
     
     // LOGIC
-    public string animalCategory; // fodder or predator only
-    public string animalType;
+    public string category; // fodder or predator only
+    public string type; // animal name
     public string strongIn; // also home biome of fodder animals
     public string weakIn; // also target biome of fodder animals
     public int currentStrength;
@@ -19,12 +19,12 @@ public class Animal : MonoBehaviour
     public static int numOfTotalAnimals;
     
     
-    public void Init(GameObject tile, string category, string type, string weakness, string strength) {
+    public void Init(GameObject tile, string category, string type, string weakIn, string strongIn) {
         currentTile = tile;
-        animalCategory = category;
-        animalType = type;
-        weakIn = weakness;
-        strongIn = strength;
+        this.category = category;
+        this.type = type;
+        this.weakIn = weakIn;
+        this.strongIn = strongIn;
         numOfTotalAnimals++;
     }
     
@@ -46,7 +46,7 @@ public class Animal : MonoBehaviour
         // need to see how the tile system works to implement
         
         // update the tile if it's a fodder animal
-        if (animalCategory == "fodder") {
+        if (category == "fodder") {
             if (weakIn == currentTile.biome) {
                 currentTile.biome = strongIn;
             }
@@ -58,7 +58,7 @@ public class Animal : MonoBehaviour
     // 0 = fodder, 1 = weak, 2 = normal, 3 = strong
     private void updateStrength()
     {
-        if (animalCategory == "fodder") currentStrength = 0; return;
+        if (category == "fodder") currentStrength = 0; return;
         if (currentTile.biome == strongIn) currentStrength = 3;
         else if (currentTile.biome == weakIn) currentStrength = 1;
         else currentStrength = 2;
