@@ -1063,8 +1063,9 @@ GameObject:
   - component: {fileID: 1192124192}
   - component: {fileID: 1192124195}
   - component: {fileID: 1192124194}
-  - component: {fileID: 1192124193}
   - component: {fileID: 1192124196}
+  - component: {fileID: 1192124193}
+  - component: {fileID: 1192124197}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -5709,13 +5710,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1192124191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 7b5903dc9eabc225ea4b90ef76a28bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BiomeManager
   allBiomes:
   - {fileID: 11400000, guid: aa7772b7feb9aa84183ef528d5724953, type: 2}
   - {fileID: 11400000, guid: da241a3343808834f99123df8840731d, type: 2}
+--- !u!114 &1192124197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192124191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f1ff2a287d5b3479a13b81138a2b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlacingHandler
+  queue: {fileID: 0}
+  testAnimal: {fileID: 2861713704079629999, guid: f7299a4413d50ff348714f13b50bc820, type: 3}
 --- !u!1 &1196389282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,13 +5878,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   paintingHandler: {fileID: 1192124193}
   type: 0
-=======
-  m_Script: {fileID: 11500000, guid: b1f1ff2a287d5b3479a13b81138a2b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlacingHandler
-  queue: {fileID: 0}
-  testAnimal: {fileID: 2861713704079629999, guid: f7299a4413d50ff348714f13b50bc820, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &1218638005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,9 +7321,6 @@ SceneRoots:
   - {fileID: 1067730498}
   - {fileID: 1861108026}
   - {fileID: 384518349}
-<<<<<<< Updated upstream
   - {fileID: 1492509400}
   - {fileID: 964269288}
-=======
   - {fileID: 16189967}
->>>>>>> Stashed changes
