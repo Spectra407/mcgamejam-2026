@@ -9,6 +9,7 @@ public class BiomeButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        paintingHandler = GameObject.Find("Tilemap").GetComponent<PaintingHandler>();
         gameObject.GetComponent<Button>().onClick.AddListener(
             () => paintingHandler.SetSelectedBiome(type)
         );
