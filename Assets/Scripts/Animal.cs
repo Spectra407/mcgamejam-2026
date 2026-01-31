@@ -39,7 +39,7 @@ public class Animal : MonoBehaviour
         // makes the animal move around randomly
         // need to see how the tile system works to implement
     }
-    
+    /*
     private void updateTile() {
         // checks the tile the object is on based on its transform location and other transform location
         // need to see how the tile system works to implement
@@ -51,7 +51,9 @@ public class Animal : MonoBehaviour
             }
         }
     }
+    */
     
+    /*
     // 0 = fodder, 1 = weak, 2 = normal, 3 = strong
     private void updateStrength()
     {
@@ -60,6 +62,7 @@ public class Animal : MonoBehaviour
         else if (currentTile.biome == weakIn) currentStrength = 1;
         else currentStrength = 2;
     }
+    */
     
     void Start()
     {
@@ -67,10 +70,12 @@ public class Animal : MonoBehaviour
         // need to see how the tile system works to implement
     }
     
+    /*
     void Update()
     {
         wander();
         updateTile();
         updateStrength();
     }
+    */
 }
