@@ -4,47 +4,35 @@ using TMPro;
 public class Scoreboard : MonoBehaviour
 {
     public TextMeshProUGUI scoretext;
-    public float gameLength = 300f; // 5 minutes
-    private float timer;
+    public Timer timer;
+    public float scoringInterval;
 
-    
     public int penaltyPerMinute = 5;
 
-    
+    private float lastTime;
 
     //public int[] predatorCounts;   // array comes from Animal class
     int[] predatorCounts = {1,5,7};
 
-    
-
     public int score;
-
-    private int lastMinute = -1;
 
     void Start()
     {
-        timer = gameLength;
+        score = 0;
+        lastTime = timer.gameLength;
     }
 
     void Update()
     {
-        if (timer <= 0f) return;
+        float currentTime = timer.GetTime();
 
-        timer -= Time.deltaTime;
-
-        int currentMinute = Mathf.FloorToInt((gameLength - timer) / 60f);
-
-        if (currentMinute != lastMinute)
+        if (lastTime != timer.gameLength && (int) (currentTime / scoringInterval) != (int) (lastTime / scoringInterval))
         {
             CalculateScore();
-
-            
-
-            Debug.Log("Minute: " + currentMinute + " | Score: " + score);
-            lastMinute = currentMinute;
-
-            scoretext.text = "Score: "+score;
+            scoretext.text = "Score\n" + score.ToString("000000");
         }
+
+        lastTime = currentTime;
     }
 
     void CalculateScore()
@@ -58,14 +46,8 @@ public class Scoreboard : MonoBehaviour
 
         int lowestPredator = GetLowestPredatorCount();
 
-        score = (totalPredators * lowestPredator);
+        score += (totalPredators * lowestPredator);
     }
-
-
-
-  
-
-
 
     // gets the lowest predator count from an array
     int GetLowestPredatorCount()
