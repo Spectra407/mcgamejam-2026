@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CreateAnimal : MonoBehaviour
 {
+    
     public Animal animalPrefab;
     
     // WETLANDS ANIMALS
