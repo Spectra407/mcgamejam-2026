@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 593891052}
   - component: {fileID: 593891051}
   - component: {fileID: 593891050}
+  - component: {fileID: 593891053}
   m_Layer: 5
   m_Name: Red Button
   m_TagString: Untagged
@@ -555,13 +556,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192124193}
-        m_TargetAssemblyTypeName: PaintingHandler, Assembly-CSharp
-        m_MethodName: SetSelectedBiome
-        m_Mode: 2
+      - m_Target: {fileID: 1192124191}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4caeaa4d662aa5b4bb53a45eed1f2732, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Tilemaps.TileBase, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -605,6 +606,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593891048}
   m_CullTransparentMesh: 1
+--- !u!114 &593891053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593891048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2b89d9bb311034a841b5025e5085f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  paintingHandler: {fileID: 1192124193}
+  type: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +934,7 @@ GameObject:
   - component: {fileID: 1192124195}
   - component: {fileID: 1192124194}
   - component: {fileID: 1192124193}
+  - component: {fileID: 1192124196}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -953,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbec4480073559419f501375edb509f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  selectedBiome: {fileID: 11400000, guid: 27f69be3048832341b6f00a8207e5a7c, type: 2}
+  selectedBiomeType: 0
 --- !u!483693784 &1192124194
 TilemapRenderer:
   serializedVersion: 2
@@ -5554,6 +5570,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1192124196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192124191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5903dc9eabc225ea4b90ef76a28bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BiomeManager
+  allBiomes:
+  - {fileID: 11400000, guid: aa7772b7feb9aa84183ef528d5724953, type: 2}
+  - {fileID: 11400000, guid: da241a3343808834f99123df8840731d, type: 2}
 --- !u!1 &1196389282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,6 +5597,7 @@ GameObject:
   - component: {fileID: 1196389286}
   - component: {fileID: 1196389285}
   - component: {fileID: 1196389284}
+  - component: {fileID: 1196389287}
   m_Layer: 5
   m_Name: Button 5
   m_TagString: Untagged
@@ -5687,6 +5719,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196389282}
   m_CullTransparentMesh: 1
+--- !u!114 &1196389287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196389282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2b89d9bb311034a841b5025e5085f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  paintingHandler: {fileID: 1192124193}
+  type: 0
 --- !u!1 &1218638005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,6 +6156,7 @@ GameObject:
   - component: {fileID: 1428612538}
   - component: {fileID: 1428612537}
   - component: {fileID: 1428612536}
+  - component: {fileID: 1428612539}
   m_Layer: 5
   m_Name: Button 3
   m_TagString: Untagged
@@ -6231,6 +6278,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428612534}
   m_CullTransparentMesh: 1
+--- !u!114 &1428612539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428612534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2b89d9bb311034a841b5025e5085f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  paintingHandler: {fileID: 1192124193}
+  type: 0
 --- !u!1 &1685654465
 GameObject:
   m_ObjectHideFlags: 0
@@ -6243,6 +6304,7 @@ GameObject:
   - component: {fileID: 1685654469}
   - component: {fileID: 1685654468}
   - component: {fileID: 1685654467}
+  - component: {fileID: 1685654470}
   m_Layer: 5
   m_Name: Button 4
   m_TagString: Untagged
@@ -6364,6 +6426,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685654465}
   m_CullTransparentMesh: 1
+--- !u!114 &1685654470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685654465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2b89d9bb311034a841b5025e5085f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  paintingHandler: {fileID: 1192124193}
+  type: 0
 --- !u!1 &1774733646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6890,6 +6966,7 @@ GameObject:
   - component: {fileID: 2109425255}
   - component: {fileID: 2109425254}
   - component: {fileID: 2109425253}
+  - component: {fileID: 2109425256}
   m_Layer: 5
   m_Name: Green Button
   m_TagString: Untagged
@@ -7011,6 +7088,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109425251}
   m_CullTransparentMesh: 1
+--- !u!114 &2109425256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109425251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2b89d9bb311034a841b5025e5085f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  paintingHandler: {fileID: 1192124193}
+  type: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Collections.Generic;
 
-public enum BiomeType
+[System.Serializable] public enum BiomeType
 {
     Desert, Plains, Forest, Wetland, Snow
 }
@@ -9,7 +10,12 @@ public enum BiomeType
 [CreateAssetMenu(fileName = "BiomeData", menuName = "Scriptable Objects/BiomeData")]
 public class BiomeData : ScriptableObject
 {
-    public string biomeName;
-    public BiomeTile tileVisual;
     public BiomeType type;
+    public List<TileBase> tiles;
+
+    public BiomeData(BiomeType type, List<TileBase> tiles)
+    {
+        this.type = type;
+        this.tiles = tiles;
+    }
 }

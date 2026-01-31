@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     {
         if (time > 0)
         {
-            time -= 50 * Time.deltaTime;
+            time -= Time.deltaTime;
             if (time < 0) time = 0;
         }
         UpdateText();
