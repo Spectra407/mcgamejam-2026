@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-public class AnimalQueueManager : MonoBehaviour
+public class Queue : MonoBehaviour
 //the code works fine but if u change the preview count it does not increase the preview count for some reason
 // the for loop in updateQueueUI might be the problem??
 {
