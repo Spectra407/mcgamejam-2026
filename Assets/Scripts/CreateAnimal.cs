@@ -11,6 +11,12 @@ public class CreateAnimal : MonoBehaviour
         return a;
     }
     
+    public Animal createCrocodile(GameObject tile) {
+        Animal a = Instantiate(animalPrefab);
+        a.Init(tile, "predator", "crocodile", "desert", "wetlands");
+        return a;
+    }
+    
     // PLAINS ANIMALS
         
     // FOREST ANIMALS
