@@ -36,10 +36,19 @@ public class AnimalAI : MonoBehaviour
         }
     }
     
+    public float CurrentStrengthTest
+    {
+        get
+        {
+            return data.baseStrength;
+        }
+        
+    }
+    
     public void Interact(AnimalAI attacker)
     {
-        float attackerStrength = attacker.CurrentStrength;
-        float myStrength = this.CurrentStrength;
+        float attackerStrength = attacker.CurrentStrengthTest;
+        float myStrength = this.CurrentStrengthTest;
         if (attackerStrength > myStrength) {
             // numOfTotalAnimals--;
             this.Die();
@@ -50,11 +59,13 @@ public class AnimalAI : MonoBehaviour
     public void Die()
     {
         // ADD LATER: increment the score tracker and animal tracker
+        Debug.Log("DIED");
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D attacker)
     {
+        Debug.Log("COLLISION");
         AnimalAI attackerAnimal = attacker.GetComponent<AnimalAI>();
         if (attackerAnimal != null)
         {
