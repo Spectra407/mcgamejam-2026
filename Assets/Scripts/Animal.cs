@@ -13,6 +13,7 @@ public class Animal : MonoBehaviour
     public string weakIn; // also target biome of fodder animals
     public int currentStrength;
     public GameObject currentTile;
+    private BiomeManager biomeManager;
     
     // RECORDS
     public static int numOfTotalAnimals;
@@ -66,6 +67,7 @@ public class Animal : MonoBehaviour
     
     void Start()
     {
+        biomeManager = FindFirstObjectByType<BiomeManager>();
         // set location to current tile
         // need to see how the tile system works to implement
     }
