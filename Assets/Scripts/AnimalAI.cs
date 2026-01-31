@@ -7,6 +7,7 @@ public class AnimalAI : MonoBehaviour
     
     private BiomeManager biomeManager;
     
+    
     public AnimalData data;
 
     void Start()
@@ -59,6 +60,7 @@ public class AnimalAI : MonoBehaviour
     public void Die()
     {
         // ADD LATER: increment the score tracker and animal tracker
+        CountTracker.Instance?.DecrementCount(data.speciesName);
         Debug.Log("DIED");
         Destroy(gameObject);
     }

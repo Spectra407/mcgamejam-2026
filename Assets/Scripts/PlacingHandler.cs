@@ -83,6 +83,10 @@ public class PlacingHandler : MonoBehaviour
         GameObject clone = Instantiate(testAnimal, position, Quaternion.identity);
         Debug.Log("spawned at " + clone.transform.position);
         occupiedTiles.Add(cell); // mark tile as occupied
+        
+        // Get the AnimalAI component of the prefab.
+        AnimalAI ai = testAnimal.GetComponent<AnimalAI>();
+        CountTracker.Instance?.IncrementCount(ai.data.speciesName);
     }
 
     // to make sure the animals dont spawn on the outer tile 
