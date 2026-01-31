@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33bfccb5be9b523cbd158631610908f, type: 3}
-  m_Name: Desert
-  m_EditorClassIdentifier: Assembly-CSharp::BiomeData
-  biomeName: Desert
-  tileVisual: {fileID: 0}
-  type: 0
+  m_Script: {fileID: 11500000, guid: f937024fee40b09669da2780aa99e758, type: 3}
+  m_Name: Elephant
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalData
+  speciesName: 
+  baseStrength: 0
+  strongBiome: 0
+  weakBiome: 0
+  queueIcon: {fileID: 0}
