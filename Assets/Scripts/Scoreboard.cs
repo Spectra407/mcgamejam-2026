@@ -12,8 +12,10 @@ public class Scoreboard : MonoBehaviour
 
     
 
-    public int[] predatorCounts;   // array comes from Animal class
+    //public int[] predatorCounts;   // array comes from Animal class
+    int[] predatorCounts = {1,5,7};
 
+    
 
     public int score;
 
@@ -41,7 +43,7 @@ public class Scoreboard : MonoBehaviour
             Debug.Log("Minute: " + currentMinute + " | Score: " + score);
             lastMinute = currentMinute;
 
-            scoretext.text = score;
+            scoretext.text = "Score: "+score;
         }
     }
 
