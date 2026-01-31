@@ -8,5 +8,5 @@ public class AnimalData : ScriptableObject
     public BiomeType strongBiome;
     public BiomeType weakBiome;
     public Sprite queueIcon;
-    public Sprite gameVisual;
+    
 }
