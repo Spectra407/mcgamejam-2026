@@ -9,7 +9,8 @@ public class GameOverScreen : MonoBehaviour
 
     public Scoreboard scoreboard;
     
-    public SpriteRenderer gameOverBox;
+    public Texture2D gameOverBox;
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
