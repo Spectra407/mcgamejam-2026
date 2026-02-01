@@ -1,20 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
+
+
+
 
 public class DiceRoll : MonoBehaviour
 {
+
     
+    public VideoPlayer videoPlayer;
+
     void Start()
     {
-        //gameObject.GetComponent<Button>().onClick.AddListener(
-        //    () => //play the video here (type));
-
-
+        Button button = GetComponent<Button>();
+        button.onClick.AddListener(RollDice);
     }
 
-    
-    void Update()
+    void RollDice()
     {
-        
+        Debug.Log("Dice rolled!");
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.Play();
+        }
+        else
+        {
+            Debug.LogError("VideoPlayer not assigned!");
+        }
     }
 }
