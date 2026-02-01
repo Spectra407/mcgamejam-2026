@@ -6278,6 +6278,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b0b0b23923dd3e3439b7e972a60d53e3, type: 2}
   - {fileID: 11400000, guid: dcc26cc6a43e5054786c2c9bb280f2cd, type: 2}
   - {fileID: 11400000, guid: 6bc463509f046b048b824f50c7ad8df9, type: 2}
+  biomeMappings: []
 --- !u!114 &1192124197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6874,7 +6875,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 708890271145463293, guid: c0b2ad566482246d4a1b46927dc152e1, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1699856595}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6166586067407948247, guid: c0b2ad566482246d4a1b46927dc152e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1790185904}
   m_SourcePrefab: {fileID: 100100000, guid: c0b2ad566482246d4a1b46927dc152e1, type: 3}
 --- !u!1 &1428612534
 GameObject:
@@ -7765,6 +7769,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1790185899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6166586067407948247, guid: c0b2ad566482246d4a1b46927dc152e1, type: 3}
+  m_PrefabInstance: {fileID: 1395051138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1790185904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790185899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4187d3cd68257137287661324a0e7f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Queue
+  animalPool: []
+  previewImages:
+  - {fileID: 1304477979}
+  - {fileID: 1717706864}
+  - {fileID: 1862518967}
+  - {fileID: 1804324564}
 --- !u!1 &1804324562
 GameObject:
   m_ObjectHideFlags: 0
