@@ -25,6 +25,7 @@ public class GameOverScreen : MonoBehaviour
         if (started) return;
         started = true;
         
+        
         rightHappyHorse.gameObject.SetActive(false);
         leftHappyHorse.gameObject.SetActive(false);
         gameOverScore.gameObject.SetActive(false);
@@ -40,11 +41,6 @@ public class GameOverScreen : MonoBehaviour
         gameOverScore.gameObject.SetActive(true);
         gameOverSprite.gameObject.SetActive(true);
         if (scoreboard.score > 1000)
-        {
-            rightHappyHorse.gameObject.SetActive(false);
-            leftHappyHorse.gameObject.SetActive(false);
-        }
-        else
         {
             rightHappyHorse.gameObject.SetActive(true);
             leftHappyHorse.gameObject.SetActive(true);
