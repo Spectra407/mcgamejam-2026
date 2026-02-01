@@ -14,7 +14,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         score = 0;
-        Timer.instance.AddIntervalAction(UpdateScore, scoringInterval);
+        Timer.instance.AddIntervalAction(scoringInterval, UpdateScore, 5);
     }
 
     void Update()

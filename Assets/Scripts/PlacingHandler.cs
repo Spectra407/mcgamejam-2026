@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlacingHandler : MonoBehaviour
 {
     private Tilemap tilemap;
+    private BiomeManager biomeManager;
     [SerializeField] private Queue queue;
     private InputAction placeAction;
 
@@ -18,9 +19,10 @@ public class PlacingHandler : MonoBehaviour
     void Start()
     {
         tilemap = GetComponent<Tilemap>();
+        biomeManager = GetComponent<BiomeManager>();
         placeAction = InputSystem.actions.FindAction("Click");
 
-        Timer.instance.AddIntervalAction(RunAutoSpawn, spawnInterval);
+        Timer.instance.AddIntervalAction(spawnInterval, RunAutoSpawn, 0);
 
         PrecomputeInnerTiles(1); // border = 1
     }
@@ -37,7 +39,8 @@ public class PlacingHandler : MonoBehaviour
             TileBase tile = tilemap.GetTile(cellCoords);
             if (tile != null && !occupiedTiles.Contains(cellCoords))
             {
-                SpawnAnimalAt(worldCoords, cellCoords);
+                GameObject animal = queue.Dequeue();
+                SpawnAnimalAt(animal, worldCoords, cellCoords);
             }
         }
     }
@@ -58,15 +61,17 @@ public class PlacingHandler : MonoBehaviour
             if (!occupiedTiles.Contains(cell))
             {
                 Vector3 spawnPos = tilemap.GetCellCenterWorld(cell);
-                SpawnAnimalAt(spawnPos, cell);
+                
+                BiomeType biomeType = biomeManager.GetBiomeAtPosition(spawnPos);
+                GameObject animal = AnimalPool.instance.GetRandomBiomeAnimal(biomeType);
+                SpawnAnimalAt(animal, spawnPos, cell);
                 spawned++;
             }
         }
     }
 
-    private void SpawnAnimalAt(Vector3 position, Vector3Int cell)
+    private void SpawnAnimalAt(GameObject animal, Vector3 position, Vector3Int cell)
     {
-        GameObject animal = queue.Dequeue();
         GameObject clone = Instantiate(animal, position, Quaternion.identity);
         Debug.Log("spawned at " + clone.transform.position);
         occupiedTiles.Add(cell); // mark tile as occupied

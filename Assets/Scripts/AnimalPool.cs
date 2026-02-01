@@ -5,8 +5,8 @@ public class AnimalPool : MonoBehaviour
 {
     public static AnimalPool instance;
     public List<GameObject> allAnimals;
-    private List<GameObject> animalPool;
-    private List<GameObject> unavailablePool;
+    public List<GameObject> availablePool;
+    public List<GameObject> unavailablePool;
 
     public int numStartingAnimals;
     public int expansionInterval;
@@ -19,14 +19,14 @@ public class AnimalPool : MonoBehaviour
         if (instance != null) Destroy(this);
         instance = this;
 
-        animalPool = new();
+        availablePool = new();
         unavailablePool = new(allAnimals);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Timer.instance.AddIntervalAction(() => ExpandPool(increasePerExpansion), expansionInterval);
+        Timer.instance.AddIntervalAction(expansionInterval, () => ExpandPool(increasePerExpansion), 1);
         ExpandPool(numStartingAnimals);
     }
 
@@ -38,15 +38,37 @@ public class AnimalPool : MonoBehaviour
 
     public GameObject GetRandomAnimal()
     {
-        return animalPool[Random.Range(0, animalPool.Count)];
+        return availablePool[Random.Range(0, availablePool.Count)];
     }
 
-    public void ExpandPool(int numToAdd)
+    public GameObject GetRandomBiomeAnimal(BiomeType biomeType)
     {
+        List<GameObject> strongAnimals = new();
+        foreach (GameObject animal in availablePool)
+        {
+            if (animal.GetComponent<AnimalAI>().data.strongBiome == biomeType)
+            {
+                strongAnimals.Add(animal);
+            }
+        }
+
+        if (strongAnimals.Count > 0)
+        {
+            return strongAnimals[Random.Range(0, strongAnimals.Count)];
+        }
+        else
+        {
+            return GetRandomAnimal();
+        }
+    }
+
+    public void ExpandPool(int n)
+    {
+        int numToAdd = System.Math.Min(n, unavailablePool.Count);
         for (int i = 0; i < numToAdd; i++)
         {
             int index = Random.Range(0, unavailablePool.Count);
-            animalPool.Add(unavailablePool[index]);
+            availablePool.Add(unavailablePool[index]);
             unavailablePool.RemoveAt(index);
         }
     }

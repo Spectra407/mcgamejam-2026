@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI waveComponent;
 
     public float gameLength = 300;
-    public List<(Action, float)> intervalActions;
+    public List<IntervalAction> intervalActions;
     private float time;
 
     void Awake()
@@ -41,11 +41,11 @@ public class Timer : MonoBehaviour
 
         if (lastTime != gameLength) // stops actions from executing right at start
         {
-            foreach ((Action action, float interval) in intervalActions)
+            foreach (IntervalAction intervalAction in intervalActions)
             {
-                if ((int) (time / interval) != (int) (lastTime / interval))
+                if ((int) (time / intervalAction.interval) != (int) (lastTime / intervalAction.interval))
                 {
-                    action.Invoke();
+                    intervalAction.action.Invoke();
                 }
             }
         }
@@ -53,9 +53,23 @@ public class Timer : MonoBehaviour
         UpdateText();
     }
 
-    public void AddIntervalAction(Action action, float interval)
+    public void AddIntervalAction(float interval, Action action)
     {
-        intervalActions.Add((action, interval));
+        intervalActions.Add(new IntervalAction(interval, action, 0));
+    }
+
+    public void AddIntervalAction(float interval, Action action, int priority)
+    {
+        IntervalAction ia = new IntervalAction(interval, action, priority);
+        for (int i = intervalActions.Count; i > 0; i--)
+        {
+            if (intervalActions[i - 1].priority >= priority)
+            {
+                intervalActions.Insert(i, ia);
+                return;
+            }
+        }
+        intervalActions.Insert(0, ia);
     }
 
     void UpdateText()
