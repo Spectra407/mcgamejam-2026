@@ -59,18 +59,24 @@ public class CountTracker : MonoBehaviour
         return total;
     }
 
-    public int GetLowestPredatorCount()
+    public int GetNumberWithAnimals()
     {
         List<int> counts = GetPopulationReport();
-        int min = counts[0];
-        foreach (int count in counts)
-        {
-            if (count < min) min = count;
+        int num = 0;
+        foreach (int count in counts) {
+            if (count > 0) num++;
         }
-        return min;
+        return num;
     }
 
     public int getSpeciesPopulationCount(string speciesName) {
-        return  animalCount[speciesName];
+        List<string> names = new List<string>();
+        foreach (GameObject animal in AnimalPool.instance.availablePool) {
+          names.Add(animal.name);  
+        }
+        if (names.Contains(speciesName)) {
+            Debug.Log(speciesName); return animalCount[speciesName];
+        }
+        return 0;
     }
 }

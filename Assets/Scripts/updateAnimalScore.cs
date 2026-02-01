@@ -8,6 +8,6 @@ public class updateAnimalScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GameObject().GetComponent<TextMeshPro>().text = CountTracker.Instance?.getSpeciesPopulationCount(this.GameObject().name).ToString();
+        gameObject.GetComponent<TextMeshProUGUI>().text = CountTracker.Instance?.getSpeciesPopulationCount(this.GameObject().name).ToString();
     }
 }
