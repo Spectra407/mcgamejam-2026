@@ -1,0 +1,62 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+public class CountTracker : MonoBehaviour
+{
+    public static CountTracker Instance;
+    public List<GameObject> animalPrefabs;
+    
+    public Dictionary<string, int> animalCount = new Dictionary<string, int>();
+
+
+    void Awake()
+    {
+        Instance = this;
+        foreach (GameObject prefab in animalPrefabs)
+        {
+            AnimalAI ai = prefab.GetComponent<AnimalAI>();
+            if (ai != null && ai.data != null)
+            {
+                if (!animalCount.ContainsKey(ai.data.speciesName))
+                {
+                    animalCount.Add(ai.data.speciesName, 0);
+                }
+            }
+        }
+    }
+    
+    
+    
+
+    public void IncrementCount(string speciesName)
+    {
+        animalCount[speciesName] += 1;
+    }
+
+    public void DecrementCount(string speciesName)
+    {
+        animalCount[speciesName] -= 1;
+    }
+
+    public List<int> GetPopulationReport()
+    {
+        List<int> countList = new List<int>();
+        foreach (GameObject prefab in animalPrefabs)
+        {
+            AnimalAI ai = prefab.GetComponent<AnimalAI>();
+            string sName = ai.data.speciesName;
+            if (animalCount.ContainsKey(sName))
+            {
+                countList.Add(animalCount[sName]);
+            }
+            else
+            {
+                countList.Add(0);
+            }
+
+            
+        }
+
+        return countList;
+    }
+}

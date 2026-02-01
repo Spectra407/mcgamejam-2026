@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class Scoreboard : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Scoreboard : MonoBehaviour
     
 
     //public int[] predatorCounts;   // array comes from Animal class
-    int[] predatorCounts = {1,5,7};
+    public List<int> predatorCounts = CountTracker.Instance?.GetPopulationReport();
+    // int[] predatorCounts = {1,5,7};
 
     
 
@@ -70,8 +72,6 @@ public class Scoreboard : MonoBehaviour
     // gets the lowest predator count from an array
     int GetLowestPredatorCount()
     {
-        if (predatorCounts.Length == 0)
-            return 0;
 
         int lowest = predatorCounts[0];
 
