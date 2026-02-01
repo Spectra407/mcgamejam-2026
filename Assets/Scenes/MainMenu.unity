@@ -559,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6319378292243394003, guid: 984c736ad458879459851f6954f94334, type: 3}
+  m_Sprite: {fileID: -5468975118093665735, guid: ff075dc04dec3d14fa6f314dadef8c8a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1393,7 +1393,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -93, y: 354}
-  m_SizeDelta: {x: 1094.615, y: 312.5501}
+  m_SizeDelta: {x: 1200, y: 312.5501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952292432
 MonoBehaviour:
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ecoside
+  m_text: Ecocide
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebb334a179267354bac0ddf0ee5e7bd3, type: 2}
   m_sharedMaterial: {fileID: 77242184149646572, guid: ebb334a179267354bac0ddf0ee5e7bd3, type: 2}

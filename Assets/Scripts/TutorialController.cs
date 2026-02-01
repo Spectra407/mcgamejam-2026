@@ -27,11 +27,14 @@ public class TutorialController : MonoBehaviour
         {
             new()
             {
-                "Welcome to Ecoside, Inc.! You'll be helping us replenish the ecosystem with *Unnatural Selection!*",
+                "Welcome to Ecocide, Inc.! You'll be helping us replenish the ecosystem with *Unnatural Selection!*",
             },
             new()
             {
-                "Look at this terrain -- not a single animal in sight! We need to fix that.",
+                "Look at this terrain -- notice how few animals there are?",
+                "Without proper management, animals will kill each other until they're all extinct.",
+                "They lowkey hunt each other...",
+                "Anyways, you're job is to build a balanced animal ecosystem!",
             },
             new()
             {
@@ -47,7 +50,8 @@ public class TutorialController : MonoBehaviour
             },
             new()
             {
-                "This is your score! Get a high enough score and you might just earn yourself a raise!"
+                "This is your score! Get a high enough score and you might just earn yourself a raise!",
+                "You earn points for having a balanced ecosystem with lots of every animal!",
             },
             new()
             {
@@ -71,6 +75,7 @@ public class TutorialController : MonoBehaviour
                 {
                     tutorialRunning = false;
                     mainMenuController.returnButtonOnClick();
+                    return;
                 }
             }
 
