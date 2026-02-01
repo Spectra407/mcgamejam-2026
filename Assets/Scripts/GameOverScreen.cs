@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
+using System.Collections;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class GameOverScreen : MonoBehaviour
 
     }
 
-    public IEnumerator<yield> ShowText()
+    public IEnumerator ShowText()
     {
         yield return new WaitForSeconds(5);
         gameOverScore.text = scoreboard.endOfGameScore;
