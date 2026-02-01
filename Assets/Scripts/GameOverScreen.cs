@@ -15,14 +15,14 @@ public class GameOverScreen : MonoBehaviour
     {
         gameOverScore.gameObject.SetActive(false);
         StartCoroutine(ShowText());
+        gameOverScore.text = scoreboard.endOfGameScore;
+        gameOverScore.gameObject.SetActive(true);
 
     }
 
     public IEnumerator ShowText()
     {
         yield return new WaitForSeconds(5);
-        gameOverScore.text = scoreboard.endOfGameScore;
-        gameOverScore.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

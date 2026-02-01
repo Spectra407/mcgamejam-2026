@@ -7923,7 +7923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b756a2e568b4fdbaecdb0e884a6894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreen
-  gameOverScore: {fileID: 0}
+  gameOverScore: {fileID: 1819220519}
   scoreboard: {fileID: 1509692070}
 --- !u!114 &1819220519
 MonoBehaviour:
@@ -7945,10 +7945,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Game Over
+
+    Your Score Was:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebb334a179267354bac0ddf0ee5e7bd3, type: 2}
+  m_sharedMaterial: {fileID: 77242184149646572, guid: ebb334a179267354bac0ddf0ee5e7bd3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
