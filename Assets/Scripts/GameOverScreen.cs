@@ -9,7 +9,7 @@ public class GameOverScreen : MonoBehaviour
 
     public Scoreboard scoreboard;
     
-    public Texture2D gameOverBox;
+    public SpriteRenderer gameOverBox;
     
     
     
