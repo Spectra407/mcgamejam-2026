@@ -9,9 +9,8 @@ public class PlacingHandler : MonoBehaviour
     [SerializeField] private Queue queue;
     private InputAction placeAction;
 
-    private float spawnTimer = 0f;
-    private float spawnInterval = 30f;
-    private int animalsPerSpawn = 5;
+    public float spawnInterval = 30f;
+    public int animalsPerSpawn = 5;
 
     private List<Vector3Int> innerTiles = new List<Vector3Int>(); // valid spawn tiles
     private HashSet<Vector3Int> occupiedTiles = new HashSet<Vector3Int>(); // tiles with animals
@@ -21,16 +20,12 @@ public class PlacingHandler : MonoBehaviour
         tilemap = GetComponent<Tilemap>();
         placeAction = InputSystem.actions.FindAction("Click");
 
+        Timer.instance.AddIntervalAction(RunAutoSpawn, spawnInterval);
+
         PrecomputeInnerTiles(1); // border = 1
     }
 
     void Update()
-    {
-        HandleManualPlacement();
-        HandleAutoSpawn();
-    }
-
-    private void HandleManualPlacement()
     {
         if (placeAction.WasPressedThisFrame())
         {
@@ -47,31 +42,24 @@ public class PlacingHandler : MonoBehaviour
         }
     }
 
-    private void HandleAutoSpawn()
+    private void RunAutoSpawn()
     {
-        spawnTimer += Time.deltaTime;
+        int spawned = 0;
+        int attempts = 0;
 
-        if (spawnTimer >= spawnInterval)
+        while (spawned < animalsPerSpawn && attempts < 50) // prevent infinite loop
         {
-            spawnTimer = 0f;
+            attempts++;
 
-            int spawned = 0;
-            int attempts = 0;
+            if (innerTiles.Count == 0) return;
 
-            while (spawned < animalsPerSpawn && attempts < 50) // prevent infinite loop
+            Vector3Int cell = innerTiles[Random.Range(0, innerTiles.Count)];
+
+            if (!occupiedTiles.Contains(cell))
             {
-                attempts++;
-
-                if (innerTiles.Count == 0) return;
-
-                Vector3Int cell = innerTiles[Random.Range(0, innerTiles.Count)];
-
-                if (!occupiedTiles.Contains(cell))
-                {
-                    Vector3 spawnPos = tilemap.GetCellCenterWorld(cell);
-                    SpawnAnimalAt(spawnPos, cell);
-                    spawned++;
-                }
+                Vector3 spawnPos = tilemap.GetCellCenterWorld(cell);
+                SpawnAnimalAt(spawnPos, cell);
+                spawned++;
             }
         }
     }
@@ -84,7 +72,7 @@ public class PlacingHandler : MonoBehaviour
         occupiedTiles.Add(cell); // mark tile as occupied
         
         // Get the AnimalAI component of the prefab.
-        AnimalAI ai = testAnimal.GetComponent<AnimalAI>();
+        AnimalAI ai = animal.GetComponent<AnimalAI>();
         CountTracker.Instance?.IncrementCount(ai.data.speciesName);
     }
 

@@ -8,7 +8,6 @@ public class CountTracker : MonoBehaviour
     
     public Dictionary<string, int> animalCount = new Dictionary<string, int>();
 
-
     void Awake()
     {
         Instance = this;
@@ -24,9 +23,6 @@ public class CountTracker : MonoBehaviour
             }
         }
     }
-    
-    
-    
 
     public void IncrementCount(string speciesName)
     {
@@ -58,5 +54,26 @@ public class CountTracker : MonoBehaviour
         }
 
         return countList;
+    }
+
+    public int GetTotalPredatorCount()
+    {
+        int total = 0;
+        foreach (int count in GetPopulationReport())
+        {
+            total += count;
+        }
+        return total;
+    }
+
+    public int GetLowestPredatorCount()
+    {
+        List<int> counts = GetPopulationReport();
+        int min = counts[0];
+        foreach (int count in counts)
+        {
+            if (count < min) min = count;
+        }
+        return min;
     }
 }
