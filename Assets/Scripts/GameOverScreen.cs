@@ -11,12 +11,14 @@ public class GameOverScreen : MonoBehaviour
     
     private bool started = false;
 
-    private Canvas canvas = gameOverScore.GetComponent<Canvas>();
+    public Canvas canvas;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        canvas = gameOverScore.GetComponent<Canvas>();
+        
         if (started) return;
         started = true;
         
