@@ -34,7 +34,7 @@ public class TutorialController : MonoBehaviour
                 "Look at this terrain -- notice how few animals there are?",
                 "Without proper management, animals will kill each other until they're all extinct.",
                 "They lowkey hunt each other...",
-                "Anyways, you're job is to build a balanced animal ecosystem!",
+                "Anyways, your job is to build a balanced animal ecosystem!",
             },
             new()
             {
