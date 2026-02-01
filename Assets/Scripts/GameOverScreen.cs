@@ -28,7 +28,7 @@ public class GameOverScreen : MonoBehaviour
 
     public IEnumerator ShowText()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(301);
         gameOverScore.text = scoreboard.endOfGameScore;
         gameOverScore.gameObject.SetActive(true);
         gameOverBox.gameObject.SetActive(true);
