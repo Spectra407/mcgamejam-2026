@@ -8,22 +8,13 @@ public class RingBuffer<T>
     private int count;
 
     public RingBuffer(int bufLen)
-    {
-        buf = new T[bufLen];
-        this.bufLen = bufLen;
-        head = 0;
-        count = 0;
-    }
-
-    public void Enqueue(T item)
-    {
-        if (count == bufLen)
-        {
-            Debug.Log("ring buffer overflowed :O :/");
-        }
-        buf[(head + count) % bufLen] = item;
-        count++;
-    }
+{
+    // Prevent the size from ever being 0
+    this.bufLen = Mathf.Max(1, bufLen); 
+    buf = new T[this.bufLen];
+    head = 0;
+    count = 0;
+}
 
     public T Dequeue()
     {
@@ -49,9 +40,22 @@ public class RingBuffer<T>
 
     public void Clear()
 {
-    count = 0;
     head = 0;
-    
+    count = 0;
+    // Optional: Array.Clear(buf, 0, bufLen); // To help Garbage Collection
 }
+
+public void Enqueue(T item)
+{
+    if (count == bufLen)
+    {
+        Debug.LogWarning("Ring buffer overflow! Ignoring request.");
+        return; // Don't allow adding if full
+    }
+    buf[(head + count) % bufLen] = item;
+    count++;
+}
+
+ 
 
 }
