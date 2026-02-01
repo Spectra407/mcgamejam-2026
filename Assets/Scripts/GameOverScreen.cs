@@ -9,9 +9,9 @@ public class GameOverScreen : MonoBehaviour
 
     public Scoreboard scoreboard;
     
-    public Canvas gameOverBox;
-    
     private bool started = false;
+
+    private Canvas canvas = gameOverScore.GetComponent<Canvas>();
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,7 +20,7 @@ public class GameOverScreen : MonoBehaviour
         if (started) return;
         started = true;
         
-        GetComponent<Canvas>(gameOverBox).enabled = false;
+        canvas.gameObject.SetActive(false);
         StartCoroutine(ShowText());
 
     }
@@ -29,7 +29,7 @@ public class GameOverScreen : MonoBehaviour
     {
         yield return new WaitForSeconds(301);
         gameOverScore.text = scoreboard.endOfGameScore;
-        GetComponent<Canvas>(gameOverBox).enabled = true;
+        canvas.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
