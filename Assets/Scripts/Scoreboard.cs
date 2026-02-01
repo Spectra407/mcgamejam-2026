@@ -14,6 +14,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         score = 0;
+        Invoke(EndOfGameScore(), 5);
         Timer.instance.AddIntervalAction(scoringInterval, UpdateScore, 5);
     }
 
@@ -42,4 +43,9 @@ public class Scoreboard : MonoBehaviour
 
         score += totalCount * lowestCount;
     }
+
+    private void EndOfGameScore()
+    {
+       Debug.Log("Game Over/n" + "Your Score Was: " + score); 
+    } 
 }
