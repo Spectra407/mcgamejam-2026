@@ -16,4 +16,7 @@ MonoBehaviour:
   baseStrength: 2
   strongBiome: 2
   weakBiome: 4
+  normalIcon: {fileID: 7935234321397735378, guid: ec01cc50223b51963adf623db0fb29ae, type: 3}
   queueIcon: {fileID: 6978367894057085676, guid: 9473601a8612c56599ff0b5f26fb54d4, type: 3}
+  strongIcon: {fileID: 7087575587717662390, guid: 95d12238df5bfb34592ab9b2ae8c95d5, type: 3}
+  weakIcon: {fileID: 9075273165803192609, guid: e0b7e509026ff064d9a77ed6f1a61eab, type: 3}
