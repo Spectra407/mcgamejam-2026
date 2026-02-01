@@ -14,7 +14,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         score = 0;
-        Invoke(EndOfGameScore(), 5);
+        // Invoke(EndOfGameScore(), 5);
         Timer.instance.AddIntervalAction(scoringInterval, UpdateScore, 5);
     }
 
