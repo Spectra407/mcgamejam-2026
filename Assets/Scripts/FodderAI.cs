@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-public class AnimalAI : MonoBehaviour
+public class FodderAI : MonoBehaviour
 {
     
     
@@ -9,9 +9,7 @@ public class AnimalAI : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
     public AnimalData data;
-    public Color strongColor = Color.green;
-    public Color weakColor = Color.red;
-    public Color normalColor = Color.white;
+    
 
     void Start()
     {
@@ -21,26 +19,10 @@ public class AnimalAI : MonoBehaviour
     
     void Update()
     {
-        ChangeOutline();
+        
     }
     
-    public void ChangeOutline()
-    {
-        BiomeType currentTileType = biomeManager.GetBiomeAtPosition(transform.position);
-        if (currentTileType == data.strongBiome)
-        {
-            spriteRenderer.color = strongColor;
-        }
-
-        else if (currentTileType == data.weakBiome)
-        {
-            spriteRenderer.color = weakColor;
-        }
-        else
-        {
-            spriteRenderer.color = normalColor;
-        }
-    }
+    
 
     public float CurrentStrength
     {
@@ -79,7 +61,6 @@ public class AnimalAI : MonoBehaviour
         if (attackerStrength > myStrength) {
             // numOfTotalAnimals--;
             this.Die();
-
         }
     }
 

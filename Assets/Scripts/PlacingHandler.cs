@@ -21,10 +21,12 @@ public class PlacingHandler : MonoBehaviour
         tilemap = GetComponent<Tilemap>();
         biomeManager = GetComponent<BiomeManager>();
         placeAction = InputSystem.actions.FindAction("Click");
-
+        
+        
         Timer.instance.AddIntervalAction(spawnInterval, RunAutoSpawn, 0);
 
         PrecomputeInnerTiles(1); // border = 1
+        RunAutoSpawn();  // Spawns a few fodder animals at the start
     }
 
     void Update()
@@ -47,6 +49,7 @@ public class PlacingHandler : MonoBehaviour
 
     private void RunAutoSpawn()
     {
+        // Only spawns fodder animals now!
         int spawned = 0;
         int attempts = 0;
 
