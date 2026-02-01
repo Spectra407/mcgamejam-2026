@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f937024fee40b09669da2780aa99e758, type: 3}
+  m_Name: HippoData
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalData
+  speciesName: Hippo
+  baseStrength: 3
+  strongBiome: 3
+  weakBiome: 1
+  queueIcon: {fileID: 5409504127669010281, guid: 4b416ad98f98ae87582f63137c3b788d, type: 3}

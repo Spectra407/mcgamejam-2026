@@ -16,4 +16,4 @@ MonoBehaviour:
   baseStrength: 1
   strongBiome: 0
   weakBiome: 4
-  queueIcon: {fileID: 0}
+  queueIcon: {fileID: 8839419542337258279, guid: c4e37bcd44945a38cb9873665b11f3eb, type: 3}
