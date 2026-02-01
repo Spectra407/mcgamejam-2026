@@ -9,7 +9,7 @@ public class Scoreboard : MonoBehaviour
     private float timer;
 
     
-    public int penaltyPerMinute = 5;
+    
 
     
 
