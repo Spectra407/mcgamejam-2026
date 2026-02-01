@@ -9,6 +9,8 @@ public class GameOverScreen : MonoBehaviour
 
     public Scoreboard scoreboard;
     
+    public SpriteRenderer gameOverSprite;
+    
     private bool started = false;
     
 
@@ -19,7 +21,8 @@ public class GameOverScreen : MonoBehaviour
         if (started) return;
         started = true;
         
-        this.gameObject.SetActive(false);
+        gameOverScore.gameObject.SetActive(false);
+        gameOverSprite.gameObject.SetActive(false);
         StartCoroutine(ShowText());
 
     }
@@ -28,7 +31,8 @@ public class GameOverScreen : MonoBehaviour
     {
         yield return new WaitForSeconds(6);
         gameOverScore.text = scoreboard.endOfGameScore;
-        this.gameObject.SetActive(true);
+        gameOverScore.gameObject.SetActive(true);
+        gameOverSprite.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
