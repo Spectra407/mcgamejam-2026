@@ -44,7 +44,7 @@ public class Scoreboard : MonoBehaviour
         score += totalCount * lowestCount;
     }
 
-    private string EndOfGameScore()
+    private void EndOfGameScore()
     {
        Debug.Log("Game Over\n" + "Your Score Was: " + score.ToString("000000"));
     }
