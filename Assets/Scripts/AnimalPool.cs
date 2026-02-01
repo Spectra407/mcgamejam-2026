@@ -7,6 +7,7 @@ public class AnimalPool : MonoBehaviour
     public List<GameObject> allAnimals;
     public List<GameObject> availablePool;
     public List<GameObject> unavailablePool;
+    public List<GameObject> fodderPool;
 
     public int numStartingAnimals;
     public int expansionInterval;
@@ -44,7 +45,7 @@ public class AnimalPool : MonoBehaviour
     public GameObject GetRandomBiomeAnimal(BiomeType biomeType)
     {
         List<GameObject> strongAnimals = new();
-        foreach (GameObject animal in availablePool)
+        foreach (GameObject animal in fodderPool)
         {
             if (animal.GetComponent<AnimalAI>().data.strongBiome == biomeType)
             {
