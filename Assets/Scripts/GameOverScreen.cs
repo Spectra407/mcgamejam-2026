@@ -11,11 +11,15 @@ public class GameOverScreen : MonoBehaviour
     
     public SpriteRenderer gameOverBox;
     
+    private bool started = false;
     
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (started) return;
+        started = true;
+        
         gameOverScore.gameObject.SetActive(false);
         gameOverBox.gameObject.SetActive(false);
         StartCoroutine(ShowText());
