@@ -23,14 +23,12 @@ public class BiomeButton : MonoBehaviour
             Debug.Log(type.ToString());
             GameObject.Find("Arrow " + type.ToString()).SetActive(true);
         });
-        
         // disable all arrows aside from desert
         GameObject.Find("Arrow Plains").SetActive(false);
         GameObject.Find("Arrow Forest").SetActive(false);
         GameObject.Find("Arrow Desert").SetActive(true);
         GameObject.Find("Arrow Snow").SetActive(false);
         GameObject.Find("Arrow Wetland").SetActive(false);
-        
     }
 
     // Update is called once per frame
