@@ -5,11 +5,13 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timeComponent;
     [SerializeField] private TextMeshProUGUI waveComponent;
-    public float time;
+
+    public float gameLength = 300;
+    private float time;
 
     void Start()
     {
-        time = 300;
+        time = gameLength;
         UpdateText();
     }
 
@@ -31,5 +33,10 @@ public class Timer : MonoBehaviour
 
         int wave = 5 - minutes;
         waveComponent.text = string.Format("Wave {0}/5", wave);
+    }
+
+    public float GetTime()
+    {
+        return time;
     }
 }

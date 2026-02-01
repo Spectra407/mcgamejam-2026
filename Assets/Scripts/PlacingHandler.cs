@@ -9,8 +9,6 @@ public class PlacingHandler : MonoBehaviour
     [SerializeField] private Queue queue;
     private InputAction placeAction;
 
-    public GameObject testAnimal;
-
     private float spawnTimer = 0f;
     private float spawnInterval = 30f;
     private int animalsPerSpawn = 5;
@@ -80,7 +78,8 @@ public class PlacingHandler : MonoBehaviour
 
     private void SpawnAnimalAt(Vector3 position, Vector3Int cell)
     {
-        GameObject clone = Instantiate(testAnimal, position, Quaternion.identity);
+        GameObject animal = queue.Dequeue();
+        GameObject clone = Instantiate(animal, position, Quaternion.identity);
         Debug.Log("spawned at " + clone.transform.position);
         occupiedTiles.Add(cell); // mark tile as occupied
         
