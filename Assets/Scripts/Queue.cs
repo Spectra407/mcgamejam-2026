@@ -1,30 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
 public class Queue : MonoBehaviour
-//the code works fine but if u change the preview count it does not increase the preview count for some reason
-// the for loop in updateQueueUI might be the problem??
+
 {
-    // animal queue UI
-    public TextMeshProUGUI animalQueueUI;
-
-    // array of all the posible animals change this to array of objects?
-    public string[] animalPool = { "croc", "horse", "Bear", "camel", "Deer" };
-
-    // the preview count which is 3
-    
-    public int previewCount = 3;
-
-    // the actual queue its a queue of strings for now
-    private Queue<string> animalQueue = new Queue<string>();
+    public List<GameObject> animalPool;
+    public List<Image> previewImages;
+    private RingBuffer<GameObject> animalQueue;
 
     void Start()
     {
         // Fill the initial queue
-        for (int i = 0; i < previewCount; i++)
+        animalQueue = new(previewImages.Count);
+        for (int i = 0; i < previewImages.Count; i++)
         {
-            animalQueue.Enqueue(GetRandomAnimal());
+            animalQueue.Enqueue(AnimalPool.instance.GetRandomAnimal());
         }
 
         UpdateQueueUI();
@@ -32,58 +24,28 @@ public class Queue : MonoBehaviour
 
     void Update()
     {
-        // Detect right-click to place the first animal
-
-        // IGNORE if (Input.GetMouseButtonDown(1)) // right click
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-        {
-            PlaceFirstAnimal();
-        }
-
-        // Update UI every frame (optional, can remove if you only want on placement)
-        UpdateQueueUI();
+        
     }
 
     // Place the first animal and refill the queue
-    void PlaceFirstAnimal()
+    public GameObject Dequeue()
     {
+        if (animalQueue.Count() == 0) return null;
 
-        
-        if (animalQueue.Count == 0) return;
+        GameObject nextAnimal = animalQueue.Dequeue();
+        animalQueue.Enqueue(AnimalPool.instance.GetRandomAnimal());
 
-        string placedAnimal = animalQueue.Dequeue();
-        Debug.Log("Placed animal: " + placedAnimal);
+        UpdateQueueUI();
 
-        // Add a new random animal to the end
-        animalQueue.Enqueue(GetRandomAnimal());
-    }
-
-    // Get a random animal from the pool
-    string GetRandomAnimal()
-    {
-        int index = Random.Range(0, animalPool.Length);
-        return animalPool[index];
+        return nextAnimal;
     }
 
     // Update the UI to show the current queue
     void UpdateQueueUI()
     {
-        if (animalQueueUI == null) return;
-        
-        string queueText = "Current Queue:\n";
-
-        
-        int i = 0;
-        foreach (string animal in animalQueue)
+        for (int i = 0; i < previewImages.Count; i++)
         {
-            // Highlight the first animal to indicate it can be placed
-            if (i == 0)
-                queueText += "> " + animal + " <\n";
-            else
-                queueText += animal + "\n";
-            i++;
+            previewImages[i].sprite = animalQueue.Get(i).GetComponent<AnimalAI>().data.queueIcon;
         }
-
-        animalQueueUI.text = queueText;
     }
 }

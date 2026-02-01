@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
   type: 0
   tiles:
-  - {fileID: 11400000, guid: 4caeaa4d662aa5b4bb53a45eed1f2732, type: 2}
+  - {fileID: 11400000, guid: 661c3b1e66ff9d242a2c57f6abcf4d1e, type: 2}
