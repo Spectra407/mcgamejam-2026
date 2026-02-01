@@ -46,4 +46,12 @@ public class RingBuffer<T>
     {
         return count;
     }
+
+    public void Clear()
+{
+    count = 0;
+    head = 0;
+    
+}
+
 }

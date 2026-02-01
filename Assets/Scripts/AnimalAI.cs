@@ -6,16 +6,16 @@ public class AnimalAI : MonoBehaviour
     
     
     private BiomeManager biomeManager;
-    private SpriteRenderer spriteRenderer;
+    
     
     public AnimalData data;
-    public Color strongColor = Color.green;
-    public Color weakColor = Color.red;
-    public Color normalColor = Color.white;
 
     void Start()
     {
         biomeManager = FindAnyObjectByType<BiomeManager>();
+<<<<<<< Updated upstream
+        
+=======
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     
@@ -29,17 +29,18 @@ public class AnimalAI : MonoBehaviour
         BiomeType currentTileType = biomeManager.GetBiomeAtPosition(transform.position);
         if (currentTileType == data.strongBiome)
         {
-            spriteRenderer.color = strongColor;
+            spriteRenderer.sprite = data.strongIcon;
         }
 
         else if (currentTileType == data.weakBiome)
         {
-            spriteRenderer.color = weakColor;
+            spriteRenderer.sprite = data.weakIcon;
         }
         else
         {
-            spriteRenderer.color = normalColor;
+            spriteRenderer.sprite = data.normalIcon;
         }
+>>>>>>> Stashed changes
     }
 
     public float CurrentStrength
