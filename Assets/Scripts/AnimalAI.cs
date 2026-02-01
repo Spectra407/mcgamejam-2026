@@ -13,7 +13,34 @@ public class AnimalAI : MonoBehaviour
     void Start()
     {
         biomeManager = FindAnyObjectByType<BiomeManager>();
+<<<<<<< Updated upstream
         
+=======
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+    
+    void Update()
+    {
+        ChangeOutline();
+    }
+    
+    public void ChangeOutline()
+    {
+        BiomeType currentTileType = biomeManager.GetBiomeAtPosition(transform.position);
+        if (currentTileType == data.strongBiome)
+        {
+            spriteRenderer.sprite = data.strongIcon;
+        }
+
+        else if (currentTileType == data.weakBiome)
+        {
+            spriteRenderer.sprite = data.weakIcon;
+        }
+        else
+        {
+            spriteRenderer.sprite = data.normalIcon;
+        }
+>>>>>>> Stashed changes
     }
 
     public float CurrentStrength
