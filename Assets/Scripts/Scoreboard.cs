@@ -50,6 +50,6 @@ public class Scoreboard : MonoBehaviour
 
     private void EndOfGameScore()
     {
-        endOfGameScore = "Game Over\n" + "Your Score Was: " + score.ToString("000000");
+        endOfGameScore = "Game Over\n" + "Your Score Was: \n" + score.ToString("000000");
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameOverScreen : MonoBehaviour
 
     public Scoreboard scoreboard;
     
-    public SpriteRenderer gameOverSprite;
+    public Image gameOverSprite;
     
     private bool started = false;
     
@@ -40,7 +41,7 @@ public class GameOverScreen : MonoBehaviour
         gameOverScore.text = scoreboard.endOfGameScore;
         gameOverScore.gameObject.SetActive(true);
         gameOverSprite.gameObject.SetActive(true);
-        if (scoreboard.score > 1000)
+        if (scoreboard.score < 1000)
         {
             rightHappyHorse.gameObject.SetActive(true);
             leftHappyHorse.gameObject.SetActive(true);
