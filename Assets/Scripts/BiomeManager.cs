@@ -54,6 +54,6 @@ public class BiomeManager : MonoBehaviour
     public TileBase RandomTile(BiomeType type)
     {
         List<TileBase> tiles = biomeTypeToTiles[type];
-        return tiles[Random.Range(0, tiles.Count - 1)];
+        return tiles[Random.Range(0, tiles.Count)];
     }
 }
