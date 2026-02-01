@@ -6,16 +6,14 @@ public class AnimalAI : MonoBehaviour
     
     
     private BiomeManager biomeManager;
-    
+    private SpriteRenderer spriteRenderer;
     
     public AnimalData data;
 
     void Start()
     {
         biomeManager = FindAnyObjectByType<BiomeManager>();
-<<<<<<< Updated upstream
-        
-=======
+
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     
@@ -40,7 +38,7 @@ public class AnimalAI : MonoBehaviour
         {
             spriteRenderer.sprite = data.normalIcon;
         }
->>>>>>> Stashed changes
+
     }
 
     public float CurrentStrength
