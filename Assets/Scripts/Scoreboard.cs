@@ -51,5 +51,6 @@ public class Scoreboard : MonoBehaviour
     private void EndOfGameScore()
     {
         endOfGameScore = "Game Over\n" + "Your Score Was: " + score.ToString("000000");
+        Debug.Log("executed");
     }
 }
