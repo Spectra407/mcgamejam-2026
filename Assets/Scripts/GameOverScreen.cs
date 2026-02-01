@@ -14,7 +14,7 @@ public class GameOverScreen : MonoBehaviour
     void Start()
     {
         
-        gameOverScore.text = endOfGameScore;
+        gameOverScore.text = scoreboard.endOfGameScore;
 
     }
 
