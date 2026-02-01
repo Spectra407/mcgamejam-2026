@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
+// Generic movement script for all animals (predators and fodder). Good luck trying to understand this shit
 public class AnimalMovement : MonoBehaviour
 {
     [Header("Movement")]

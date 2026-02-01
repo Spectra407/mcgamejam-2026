@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 
+// This calculates the score for the scoreboard
 public class Scoreboard : MonoBehaviour
 {
     public TextMeshProUGUI scoretext;

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+// This toggles between showing total score and showing how many of each animal you have
 public class ScoreboardToggle : MonoBehaviour
 {
     private bool scoreboardState;

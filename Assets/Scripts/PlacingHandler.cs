@@ -10,11 +10,10 @@ public class PlacingHandler : MonoBehaviour
     [SerializeField] private Queue queue;
     private InputAction placeAction;
 
-    public float spawnInterval = 60f;
-    public int animalsPerSpawn = 15;
+    public float spawnInterval = 2f;
+    public int animalsPerSpawn = 1;
 
     private List<Vector3Int> innerTiles = new List<Vector3Int>(); // valid spawn tiles
-    private HashSet<Vector3Int> occupiedTiles = new HashSet<Vector3Int>(); // tiles with animals
 
     void Start()
     {
@@ -39,7 +38,7 @@ public class PlacingHandler : MonoBehaviour
             Vector3Int cellCoords = tilemap.WorldToCell(worldCoords);
 
             TileBase tile = tilemap.GetTile(cellCoords);
-            if (tile != null && !occupiedTiles.Contains(cellCoords))
+            if (tile != null)
             {
                 GameObject animal = queue.Dequeue();
                 SpawnAnimalAt(animal, worldCoords, cellCoords);
@@ -49,35 +48,19 @@ public class PlacingHandler : MonoBehaviour
 
     private void RunAutoSpawn()
     {
-        // Only spawns fodder animals now!
-        int spawned = 0;
-        int attempts = 0;
-
-        while (spawned < animalsPerSpawn && attempts < 50) // prevent infinite loop
-        {
-            attempts++;
-
-            if (innerTiles.Count == 0) return;
-
-            Vector3Int cell = innerTiles[Random.Range(0, innerTiles.Count)];
-
-            if (!occupiedTiles.Contains(cell))
-            {
-                Vector3 spawnPos = tilemap.GetCellCenterWorld(cell);
-                
-                BiomeType biomeType = biomeManager.GetBiomeAtPosition(spawnPos);
-                GameObject animal = AnimalPool.instance.GetRandomBiomeAnimal(biomeType);
-                SpawnAnimalAt(animal, spawnPos, cell);
-                spawned++;
-            }
-        }
+        if (innerTiles.Count == 0) return;
+        
+        // choose a random tile, and set a vector at the center
+        Vector3Int cell = innerTiles[Random.Range(0, innerTiles.Count)];
+        Vector3 spawnPos = tilemap.GetCellCenterWorld(cell);
+        
+        GameObject animal = AnimalPool.instance.GetRandomFodderAnimal();
+        SpawnAnimalAt(animal, spawnPos, cell);
     }
 
     private void SpawnAnimalAt(GameObject animal, Vector3 position, Vector3Int cell)
     {
         GameObject clone = Instantiate(animal, position, Quaternion.identity);
-        Debug.Log("spawned at " + clone.transform.position);
-        occupiedTiles.Add(cell); // mark tile as occupied
         
         // Get the AnimalAI component of the prefab.
         AnimalAI ai = animal.GetComponent<AnimalAI>();
@@ -122,7 +105,5 @@ public class PlacingHandler : MonoBehaviour
                 }
             }
         }
-
-        
     }
 }

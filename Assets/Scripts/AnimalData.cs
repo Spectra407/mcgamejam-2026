@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Contains data used for all animals. Some fields are not used by fodder animals
 [CreateAssetMenu(fileName = "AnimalData", menuName = "Scriptable Objects/AnimalData")]
 public class AnimalData : ScriptableObject
 {

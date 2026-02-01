@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+// Keeps track of which animals are in the game and which are not, and allows for adding more animals
 public class AnimalPool : MonoBehaviour
 {
     public static AnimalPool instance;
@@ -73,5 +74,9 @@ public class AnimalPool : MonoBehaviour
             availablePool.Add(unavailablePool[index]);
             unavailablePool.RemoveAt(index);
         }
+    }
+    
+    public GameObject GetRandomFodderAnimal() {
+        return fodderPool[Random.Range(0, fodderPool.Count)];
     }
 }

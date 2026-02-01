@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+// AI for the fodder animals. These animals are weaker, spawn randomly instead of being placed, and expand their territory as they move
 public class FodderAI : MonoBehaviour
 {
     

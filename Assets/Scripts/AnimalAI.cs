@@ -1,10 +1,9 @@
 using UnityEditor;
 using UnityEngine;
 
+// AI for predator animals. These animals are placeable and generally stronger
 public class AnimalAI : MonoBehaviour
 {
-    
-    
     private BiomeManager biomeManager;
     private SpriteRenderer spriteRenderer;
     

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
+// Allows for switching current biome for painting. most of this stuff (the getComponent stuff) is for toggling the arrow
 public class BiomeButton : MonoBehaviour
 {
     public PaintingHandler paintingHandler;
@@ -29,11 +30,5 @@ public class BiomeButton : MonoBehaviour
         GameObject.Find("Arrow Desert").GetComponent<Image>().enabled = true;
         GameObject.Find("Arrow Snow").GetComponent<Image>().enabled = false;
         GameObject.Find("Arrow Wetland").GetComponent<Image>().enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

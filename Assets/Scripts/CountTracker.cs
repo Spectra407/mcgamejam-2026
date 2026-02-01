@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+// Keeps track of amount of each animal, + collection of related functions
 public class CountTracker : MonoBehaviour
 {
     public static CountTracker Instance;
@@ -73,9 +74,6 @@ public class CountTracker : MonoBehaviour
         List<string> names = new List<string>();
         foreach (GameObject animal in AnimalPool.instance.availablePool) {
           names.Add(animal.name);  
-        }
-        if (names.Contains(speciesName)) {
-            Debug.Log(speciesName); return animalCount[speciesName];
         }
         return 0;
     }

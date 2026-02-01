@@ -55,8 +55,19 @@ MonoBehaviour:
   - {fileID: 8223260639441628376, guid: 2d71b31734160dcdb83134239fe92f1e, type: 3}
   - {fileID: 8165867836782412758, guid: 32e1d9b8bcc6db00e94f535ebc0b2e70, type: 3}
   - {fileID: 8380678346984012110, guid: d39d2f9b9c55f7f52abe4bfa815e80c0, type: 3}
+  - {fileID: 9034701207523031152, guid: 3209f180c52d3e23bb588a76bdb24c58, type: 3}
+  - {fileID: 3127093480208170816, guid: 02865f10db79f9ffe9b33d692d085ed9, type: 3}
+  - {fileID: 6168643713825540309, guid: 8c8800c654c7f805e923dc7d14a4cef7, type: 3}
+  - {fileID: 7202935976629553489, guid: 35fe5935b473274a3ae44d8885457072, type: 3}
+  - {fileID: 5089993625457514585, guid: 06f51eab5107245f9a22b05c613b6006, type: 3}
   availablePool: []
   unavailablePool: []
+  fodderPool:
+  - {fileID: 9034701207523031152, guid: 3209f180c52d3e23bb588a76bdb24c58, type: 3}
+  - {fileID: 3127093480208170816, guid: 02865f10db79f9ffe9b33d692d085ed9, type: 3}
+  - {fileID: 6168643713825540309, guid: 8c8800c654c7f805e923dc7d14a4cef7, type: 3}
+  - {fileID: 7202935976629553489, guid: 35fe5935b473274a3ae44d8885457072, type: 3}
+  - {fileID: 5089993625457514585, guid: 06f51eab5107245f9a22b05c613b6006, type: 3}
   numStartingAnimals: 3
   expansionInterval: 30
   increasePerExpansion: 1
