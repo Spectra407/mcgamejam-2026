@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2468902573056196081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3822675412546246970}
+  - component: {fileID: 8098977149833106246}
+  m_Layer: 0
+  m_Name: Animal Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3822675412546246970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468902573056196081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8098977149833106246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468902573056196081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7354eb27c5b19ec4e8fff4620eca9d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalPool
+  allAnimals:
+  - {fileID: 417323222491144215, guid: 22ab71a623d833ec2b66675626dfce6d, type: 3}
+  - {fileID: 3739893170060651236, guid: edf6903266e0986cd8da60020dc661f2, type: 3}
+  - {fileID: 778530209517522629, guid: 634ea8385adb69504a04e54553a5c7dd, type: 3}
+  - {fileID: 7460385307681771971, guid: 5773245be57742bbda71aa3c9b646e32, type: 3}
+  - {fileID: 6270877955153712666, guid: 0b4a247649f6a0808851e62089223b33, type: 3}
+  - {fileID: 1629018142038303866, guid: 2eb9c1f4c49102d7abeed9df20d7f66e, type: 3}
+  - {fileID: 2566237294541817243, guid: bc6dbe23f69ebee4191280510dccf830, type: 3}
+  - {fileID: 8223260639441628376, guid: 2d71b31734160dcdb83134239fe92f1e, type: 3}
+  - {fileID: 8165867836782412758, guid: 32e1d9b8bcc6db00e94f535ebc0b2e70, type: 3}
+  - {fileID: 8380678346984012110, guid: d39d2f9b9c55f7f52abe4bfa815e80c0, type: 3}
+  availablePool: []
+  unavailablePool: []
+  numStartingAnimals: 3
+  expansionInterval: 30
+  increasePerExpansion: 1
