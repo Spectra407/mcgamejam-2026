@@ -39,7 +39,7 @@ public class GameOverScreen : MonoBehaviour
         gameOverScore.text = scoreboard.endOfGameScore;
         gameOverScore.gameObject.SetActive(true);
         gameOverSprite.gameObject.SetActive(true);
-        if (scoreboard.score < 1000)
+        if (scoreboard.score > 1000)
         {
             rightHappyHorse.gameObject.SetActive(false);
             leftHappyHorse.gameObject.SetActive(false);
