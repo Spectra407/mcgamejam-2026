@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f937024fee40b09669da2780aa99e758, type: 3}
-  m_Name: RoadrunnerData
+  m_Name: BearData
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
-  speciesName: Roadrunner
-  baseStrength: 1
-  strongBiome: 0
+  speciesName: Bear
+  baseStrength: 2
+  strongBiome: 2
   weakBiome: 4
-  queueIcon: {fileID: 8839419542337258279, guid: c4e37bcd44945a38cb9873665b11f3eb, type: 3}
+  queueIcon: {fileID: 6978367894057085676, guid: 9473601a8612c56599ff0b5f26fb54d4, type: 3}

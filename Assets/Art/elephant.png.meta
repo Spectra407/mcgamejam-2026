@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 038f5c3a979fa0cef998eae5251f0e42
+guid: 079d653b52031f55bb43dde277ac7f68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3284404077422037091
-    second: roadrunner_0
+      213: -8283620988547500454
+    second: elephant_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roadrunner_0
+      name: elephant_0
       rect:
         serializedVersion: 2
-        x: 199
-        y: 127
-        width: 1423
-        height: 824
+        x: 305
+        y: 77
+        width: 1378
+        height: 923
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 368c59d5b1c849d20800000000000000
-      internalID: 3284404077422037091
+      spriteID: a56f7a3799aaa0d80800000000000000
+      internalID: -8283620988547500454
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      roadrunner_0: 3284404077422037091
+      elephant_0: -8283620988547500454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

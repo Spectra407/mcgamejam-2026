@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f937024fee40b09669da2780aa99e758, type: 3}
-  m_Name: RoadrunnerData
+  m_Name: ElephantData
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
-  speciesName: Roadrunner
-  baseStrength: 1
-  strongBiome: 0
-  weakBiome: 4
-  queueIcon: {fileID: 8839419542337258279, guid: c4e37bcd44945a38cb9873665b11f3eb, type: 3}
+  speciesName: Elephant
+  baseStrength: 3
+  strongBiome: 1
+  weakBiome: 2
+  queueIcon: {fileID: -7341766336651687702, guid: 948b49b6033dde0288c31a4c6d745fbd, type: 3}
