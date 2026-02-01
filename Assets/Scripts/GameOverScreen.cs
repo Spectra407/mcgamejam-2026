@@ -13,7 +13,7 @@ public class GameOverScreen : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameOverScore.SetActive(false);
+        gameOverScore.gameObject.SetActive(false);
         StartCoroutine(ShowText());
 
     }
@@ -22,7 +22,7 @@ public class GameOverScreen : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         gameOverScore.text = scoreboard.endOfGameScore;
-        gameOverScore.SetActive(true);
+        gameOverScore.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
