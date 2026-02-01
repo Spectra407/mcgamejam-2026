@@ -10,8 +10,8 @@ public class PlacingHandler : MonoBehaviour
     [SerializeField] private Queue queue;
     private InputAction placeAction;
 
-    public float spawnInterval = 30f;
-    public int animalsPerSpawn = 5;
+    public float spawnInterval = 60f;
+    public int animalsPerSpawn = 15;
 
     private List<Vector3Int> innerTiles = new List<Vector3Int>(); // valid spawn tiles
     private HashSet<Vector3Int> occupiedTiles = new HashSet<Vector3Int>(); // tiles with animals
