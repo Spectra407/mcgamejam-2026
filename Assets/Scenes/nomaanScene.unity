@@ -615,7 +615,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461844601}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e4b1d17e3d5394ec598694ac432c65db, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3427e78a5ab8b46bfadfa327f40bf655, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -624,17 +624,19 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 0
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -650,7 +652,7 @@ Transform:
   m_GameObject: {fileID: 461844601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1352.1, y: 273.48386, z: 0}
+  m_LocalPosition: {x: 1352.12, y: 273.48386, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1114,6 +1116,7 @@ GameObject:
   - component: {fileID: 1591085829}
   - component: {fileID: 1591085828}
   - component: {fileID: 1591085827}
+  - component: {fileID: 1591085831}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1197,7 +1200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1591085829}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 4187d3cd68257137287661324a0e7f11, type: 3}
+        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RandomizeQueue()
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1591085829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1251,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591085825}
   m_CullTransparentMesh: 1
+--- !u!114 &1591085831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591085825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4187d3cd68257137287661324a0e7f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Queue
+  animalPool: []
+  previewImages: []
 --- !u!1 &1600010214
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,4 +48,18 @@ public class Queue : MonoBehaviour
             previewImages[i].sprite = animalQueue.Get(i).GetComponent<AnimalAI>().data.queueIcon;
         }
     }
+
+    public void RandomizeQueue()
+{
+    animalQueue.Clear();
+
+    for (int i = 0; i < previewImages.Count; i++)
+    {
+        animalQueue.Enqueue(AnimalPool.instance.GetRandomAnimal());
+    }
+
+    UpdateQueueUI();
+    Debug.Log("randomized");
+}
+
 }
