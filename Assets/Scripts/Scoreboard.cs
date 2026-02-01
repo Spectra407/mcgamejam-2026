@@ -17,7 +17,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         score = 0;
-        gameOverScore = Invoke(nameof(EndOfGameScore), 5);
+        Invoke(nameof(EndOfGameScore), 5);
         Timer.instance.AddIntervalAction(scoringInterval, UpdateScore, 5);
     }
 
@@ -49,6 +49,6 @@ public class Scoreboard : MonoBehaviour
 
     private string EndOfGameScore()
     {
-       return ("Game Over\n" + "Your Score Was: " + score.ToString("000000"));
+       this.gameOverScore = ("Game Over\n" + "Your Score Was: " + score.ToString("000000"));
     }
 }
