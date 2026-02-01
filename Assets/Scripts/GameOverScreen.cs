@@ -32,7 +32,7 @@ public class GameOverScreen : MonoBehaviour
         yield return new WaitForSeconds(6);
         gameOverScore.text = scoreboard.endOfGameScore;
         gameOverScore.gameObject.SetActive(true);
-        gameOverSprite.gameObject.SetActive(false);
+        gameOverSprite.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
