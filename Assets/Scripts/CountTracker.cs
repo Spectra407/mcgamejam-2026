@@ -69,4 +69,8 @@ public class CountTracker : MonoBehaviour
         }
         return min;
     }
+
+    public int getSpeciesPopulationCount(string speciesName) {
+        return  animalCount[speciesName];
+    }
 }
