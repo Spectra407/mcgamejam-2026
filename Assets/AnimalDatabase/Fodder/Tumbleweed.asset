@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f937024fee40b09669da2780aa99e758, type: 3}
   m_Name: Tumbleweed
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
-  speciesName: 
-  baseStrength: 0
+  speciesName: Tumbleweed
+  baseStrength: 0.5
   strongBiome: 0
   weakBiome: 0
+  normalIcon: {fileID: 0}
   queueIcon: {fileID: 0}
+  strongIcon: {fileID: 0}
+  weakIcon: {fileID: 0}

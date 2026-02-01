@@ -34,6 +34,18 @@ public class PaintingHandler : MonoBehaviour
         }
     }
 
+    public void SetTile(Vector3 worldCoords, BiomeType biome)
+    {
+        Vector3Int cellCoords = tilemap.WorldToCell(worldCoords);
+        
+        TileBase tile = tilemap.GetTile(cellCoords);
+
+        if (tile != null && biomeManager.TileToBiomeType(tile) != biome)
+        {
+            tilemap.SetTile(cellCoords, biomeManager.RandomTile(biome));
+        }
+    }
+
     public void SetSelectedBiome(BiomeType biome)
     {
         selectedBiomeType = biome;

@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class FodderAI : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class FodderAI : MonoBehaviour
     
     private BiomeManager biomeManager;
     private SpriteRenderer spriteRenderer;
+    private Tilemap tilemap;
+
+    public float paintInterval = 0.5f;
+    private float paintTimer;
     
     public AnimalData data;
     
@@ -19,10 +24,25 @@ public class FodderAI : MonoBehaviour
     
     void Update()
     {
-        
+        HandlePainting();
     }
     
-    
+    public void HandlePainting()
+    {
+        paintTimer += Time.deltaTime;
+        if (paintTimer >= paintInterval)
+        {
+            Vector3Int cellPos = tilemap.WorldToCell(transform.position);
+            
+            TileBase preferredTile = biomeManager.GetTileAssetByType(data.strongBiome);
+            
+            if (preferredTile != null)
+            {
+                tilemap.SetTile(cellPos, preferredTile);
+            }
+            paintTimer = 0f;
+        }
+    }
 
     public float CurrentStrength
     {

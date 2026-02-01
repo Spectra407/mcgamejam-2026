@@ -6,6 +6,13 @@ public class BiomeManager : MonoBehaviour
 {
     // Fields
     public List<BiomeData> allBiomes;
+    [System.Serializable] public struct BiomeMapping
+    {
+        public BiomeType type;
+        public TileBase tileAsset;
+    }
+    public List<BiomeMapping> biomeMappings;
+    
     private Dictionary<BiomeType, List<TileBase>> biomeTypeToTiles;
     private Dictionary<TileBase, BiomeType> tileToBiomeType;
 
@@ -55,5 +62,33 @@ public class BiomeManager : MonoBehaviour
     {
         List<TileBase> tiles = biomeTypeToTiles[type];
         return tiles[Random.Range(0, tiles.Count)];
+    }
+    
+    public TileBase GetTileAssetByType(BiomeType type)
+    {
+        foreach(var mapping in biomeMappings)
+        {
+            if (mapping.type == type)
+            {
+                return mapping.tileAsset;
+            }
+        }
+        Debug.LogWarning($"No tile asset found for biometype");
+        return null;
+    }
+    
+    public BiomeType GetBiomeTypeAt(Vector3 worldPos)
+    {
+        Vector3Int cellPos = biomeTilemap.WorldToCell(worldPos);
+        TileBase tileAtCell = biomeTilemap.GetTile(cellPos);
+        foreach (var mapping in biomeMappings)
+        {
+            if (mapping.tileAsset == tileAtCell)
+            {
+                return mapping.type;
+            }
+        }
+
+        return BiomeType.Plains;
     }
 }
