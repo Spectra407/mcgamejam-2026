@@ -8,8 +8,12 @@ public class GameOverScreen : MonoBehaviour
     
     public TextMeshProUGUI gameOverScore;
 
-    public SpriteRenderer leftHappyHorse;
-    public SpriteRenderer rightHappyHorse;
+    public Image leftHappyHorse;
+    public Image rightHappyHorse;
+
+    public Image leftAngryHorse;
+
+    public Image rightAngryHorse;
 
 
     public Scoreboard scoreboard;
@@ -26,7 +30,8 @@ public class GameOverScreen : MonoBehaviour
         if (started) return;
         started = true;
         
-        
+        rightAngryHorse.gameObject.SetActive(false);
+        leftAngryHorse.gameObject.SetActive(false);
         rightHappyHorse.gameObject.SetActive(false);
         leftHappyHorse.gameObject.SetActive(false);
         gameOverScore.gameObject.SetActive(false);
@@ -41,10 +46,15 @@ public class GameOverScreen : MonoBehaviour
         gameOverScore.text = scoreboard.endOfGameScore;
         gameOverScore.gameObject.SetActive(true);
         gameOverSprite.gameObject.SetActive(true);
-        if (scoreboard.score < 1000)
+        if (scoreboard.score > 200)
         {
             rightHappyHorse.gameObject.SetActive(true);
             leftHappyHorse.gameObject.SetActive(true);
+        }
+        else
+        {
+            rightAngryHorse.gameObject.SetActive(true);
+            leftAngryHorse.gameObject.SetActive(true);
         }
     }
 
