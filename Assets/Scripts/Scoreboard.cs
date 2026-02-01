@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class Scoreboard : MonoBehaviour
 {
     public TextMeshProUGUI scoretext;
-    public TextMeshProUGUI gameOverScore;
+    
+    public string endOfGameScore;
 
     public float scoringInterval;
     public int penaltyPerMinute = 5;
@@ -49,6 +50,6 @@ public class Scoreboard : MonoBehaviour
 
     private void EndOfGameScore()
     {
-       gameOverScore.text = "Game Over\n" + "Your Score Was: " + score.ToString("000000");
+        endOfGameScore = "Game Over\n" + "Your Score Was: " + score.ToString("000000");
     }
 }
