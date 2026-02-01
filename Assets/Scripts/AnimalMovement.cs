@@ -54,12 +54,14 @@ public class AnimalMovement : MonoBehaviour
             foreach (Vector2 dir in directions) {
                 RaycastHit2D[] h = Physics2D.RaycastAll(transform.position, dir, sightRange);
                 List<RaycastHit2D> hits = new List<RaycastHit2D>(h);
-                // add all objects with this script (AnimalMovement) into the list (excluding itself && hunting / hunted)
+                // add all other animals into the list (excluding itself && hunting / hunted && animals of same type)
                 foreach (RaycastHit2D hit in hits)
                     if (hit.collider.gameObject.GetComponent<AnimalMovement>() != null && 
                         hit.collider.gameObject != gameObject && 
                         !hit.collider.gameObject.GetComponent<AnimalMovement>().getHunting() &&
-                        !hit.collider.gameObject.GetComponent<AnimalMovement>().getHunted()) animalsInRange.Add(hit.collider.gameObject);
+                        !hit.collider.gameObject.GetComponent<AnimalMovement>().getHunted() &&
+                        !hit.collider.gameObject.GetComponent<AnimalAI>().data == gameObject.GetComponent<AnimalAI>().data)
+                        animalsInRange.Add(hit.collider.gameObject);
             }
             // copy all animals with lower strength into a new list
             List<GameObject> weakerAnimals = new  List<GameObject>();
@@ -72,8 +74,8 @@ public class AnimalMovement : MonoBehaviour
                 targetAnimal = weakerAnimals[Random.Range(0,  weakerAnimals.Count)];
                 targetAnimal.GetComponent<AnimalMovement>().setHunted(true);
                 targetAnimal.GetComponent<AnimalMovement>().setHunter(this.gameObject);
-                speed = Random.Range(baseSpeed - .5f, baseSpeed + .5f);
-                targetAnimal.GetComponent<AnimalMovement>().setSpeed(Random.Range(baseSpeed - .5f, baseSpeed + .5f));
+                speed = Random.Range(baseSpeed, baseSpeed + 1f);
+                targetAnimal.GetComponent<AnimalMovement>().setSpeed(Random.Range(baseSpeed, baseSpeed + 1.5f));
                 hunting = true;
             }
         }
@@ -177,6 +179,7 @@ public class AnimalMovement : MonoBehaviour
     public void wobble() {
         float wobbleModifier = 1;
         if (hunting || hunted) wobbleModifier = 2f;
+        else if (waiting) wobbleModifier = 0.5f;
         float angle;
         // move wobbleState between 0 and 1 (left and right)
         if (wobbleDirection) angleState += Time.deltaTime * wobbleSpeed * wobbleModifier; 

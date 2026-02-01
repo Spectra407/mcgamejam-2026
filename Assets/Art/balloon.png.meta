@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cba50b90762196445b11380c3d31e391
+guid: bc7dca4f1e4ac2647bd1afd68823e0db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6424138700676151137
-    second: PlainsTile_0
+      213: 3499272959063439820
+    second: balloon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlainsTile_0
+      name: balloon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 183
+        y: 187
+        width: 664
+        height: 1673
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16734a99c10272950800000000000000
-      internalID: 6424138700676151137
+      spriteID: cc93b11673aef8030800000000000000
+      internalID: 3499272959063439820
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlainsTile_0: 6424138700676151137
+      balloon_0: 3499272959063439820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
