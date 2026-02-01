@@ -22,13 +22,14 @@ public class AnimalPool : MonoBehaviour
 
         availablePool = new();
         unavailablePool = new(allAnimals);
+        
+        ExpandPool(numStartingAnimals);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Timer.instance.AddIntervalAction(expansionInterval, () => ExpandPool(increasePerExpansion), 1);
-        ExpandPool(numStartingAnimals);
     }
 
     // Update is called once per frame
