@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Rabbit
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   speciesName: Rabbit
-  baseStrength: 1
+  baseStrength: 0.5
   strongBiome: 1
   weakBiome: 1
+  normalIcon: {fileID: 0}
   queueIcon: {fileID: 0}
+  strongIcon: {fileID: 0}
+  weakIcon: {fileID: 0}

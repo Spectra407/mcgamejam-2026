@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Beaver
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   speciesName: Beaver
-  baseStrength: 1
+  baseStrength: 0.5
   strongBiome: 3
   weakBiome: 3
+  normalIcon: {fileID: 1751314037236353543, guid: e9126707f92fc104cb6825ce536ae5dc, type: 3}
   queueIcon: {fileID: 0}
+  strongIcon: {fileID: 0}
+  weakIcon: {fileID: 0}

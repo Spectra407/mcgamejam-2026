@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Squirrel
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   speciesName: Squirrel
-  baseStrength: 1
+  baseStrength: 0.5
   strongBiome: 2
   weakBiome: 2
+  normalIcon: {fileID: 0}
   queueIcon: {fileID: 0}
+  strongIcon: {fileID: 0}
+  weakIcon: {fileID: 0}

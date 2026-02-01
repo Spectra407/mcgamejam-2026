@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Penguin
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   speciesName: Penguin
-  baseStrength: 1
+  baseStrength: 0.5
   strongBiome: 4
   weakBiome: 4
+  normalIcon: {fileID: 0}
   queueIcon: {fileID: 0}
+  strongIcon: {fileID: 0}
+  weakIcon: {fileID: 0}

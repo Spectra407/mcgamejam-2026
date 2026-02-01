@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Tumbleweed
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   speciesName: Tumbleweed
-  baseStrength: 1
+  baseStrength: 0.5
   strongBiome: 0
   weakBiome: 0
+  normalIcon: {fileID: 0}
   queueIcon: {fileID: 0}
+  strongIcon: {fileID: 0}
+  weakIcon: {fileID: 0}
