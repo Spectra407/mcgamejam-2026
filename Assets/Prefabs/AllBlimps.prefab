@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 565095060760538977}
   - component: {fileID: 8802833862967076908}
   - component: {fileID: 8175633842786179137}
+  - component: {fileID: 2347194233502388002}
   m_Layer: 0
   m_Name: blimp_3
   m_TagString: Untagged
@@ -119,7 +120,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c98408d3b41db4d34ae17b8f7cfd2bf8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3e2baa6c8e9746e57b25ee2ead55ff0a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -205,6 +206,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2347194233502388002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689117840623248577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9843f8be2b5aa3108881ef145389970d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalSounds
+  clips: []
+  minWait: 10
+  maxWait: 30
 --- !u!1 &2755807110508942497
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +233,7 @@ GameObject:
   - component: {fileID: 1067332383391655105}
   - component: {fileID: 1338004687805278632}
   - component: {fileID: 6712509443061402127}
+  - component: {fileID: 7906683631030054892}
   m_Layer: 0
   m_Name: blimp_5
   m_TagString: Untagged
@@ -324,7 +341,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c98408d3b41db4d34ae17b8f7cfd2bf8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 33fc9e5aeb6d4c887ab01c19c553d808, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -410,6 +427,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7906683631030054892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755807110508942497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9843f8be2b5aa3108881ef145389970d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalSounds
+  clips: []
+  minWait: 10
+  maxWait: 30
 --- !u!1 &3575751782317805923
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +454,7 @@ GameObject:
   - component: {fileID: 4593588815483495661}
   - component: {fileID: 998423245017686205}
   - component: {fileID: 332587844314543123}
+  - component: {fileID: 4331975214549010071}
   m_Layer: 0
   m_Name: blimp_2
   m_TagString: Untagged
@@ -529,7 +562,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c98408d3b41db4d34ae17b8f7cfd2bf8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 26ea9ca52bce97f8cb727124068a9abc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -615,6 +648,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4331975214549010071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575751782317805923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9843f8be2b5aa3108881ef145389970d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalSounds
+  clips: []
+  minWait: 10
+  maxWait: 30
 --- !u!1 &5865052295107224628
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +675,7 @@ GameObject:
   - component: {fileID: 6143027159890829631}
   - component: {fileID: 3349500781685628204}
   - component: {fileID: 4431691229058305639}
+  - component: {fileID: 1943344201996634553}
   m_Layer: 0
   m_Name: blimp_4
   m_TagString: Untagged
@@ -734,7 +783,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c98408d3b41db4d34ae17b8f7cfd2bf8, type: 3}
+  m_Resource: {fileID: 8300000, guid: f72edd057113186eea849bc3938756fc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -820,6 +869,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1943344201996634553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865052295107224628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9843f8be2b5aa3108881ef145389970d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalSounds
+  clips: []
+  minWait: 10
+  maxWait: 30
 --- !u!1 &8406402394324806594
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +1039,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c98408d3b41db4d34ae17b8f7cfd2bf8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4ada99a8ba37dce34b0dded392bb50ea, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     private GameObject mainCanvas;
-    private GameObject optionsCanvas;
+    private GameObject tutorialCanvas;
     
     void Start() {
         mainCanvas = GameObject.Find("Main Canvas");
-        optionsCanvas = GameObject.Find("Options Canvas");
-        optionsCanvas.SetActive(false);
+        tutorialCanvas = GameObject.Find("Tutorial Canvas");
+        tutorialCanvas.SetActive(false);
     }
     
     // MAIN MENU
@@ -17,9 +17,9 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     
-    public void optionsButtonOnClick() {
+    public void tutorialButtonOnClick() {
         mainCanvas.SetActive(false);
-        optionsCanvas.SetActive(true);
+        tutorialCanvas.SetActive(true);
     }
     
     public void quitButtonOnClick() {
@@ -28,7 +28,7 @@ public class MainMenuController : MonoBehaviour
     
     // OPTIONS MENU
     public void returnButtonOnClick() {
-        optionsCanvas.SetActive(false);
+        tutorialCanvas.SetActive(false);
         mainCanvas.SetActive(true);
     }
 }
