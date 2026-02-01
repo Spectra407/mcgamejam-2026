@@ -233,7 +233,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -333,5 +333,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2045425003ed2e5884a572fa1854729, type: 3}
   - {fileID: 8300000, guid: 766184aedcddc4bd8857444821950c4b, type: 3}
   - {fileID: 8300000, guid: 3ca919e196e8e83a5a345c406628b72b, type: 3}
-  minWait: 3
-  maxWait: 10
+  minWait: 5
+  maxWait: 15

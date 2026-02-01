@@ -333,5 +333,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dc2e9245edcdcd0f6a2c069c7b47b513, type: 3}
   - {fileID: 8300000, guid: 5832e6dcaae2c3f67adc9c6ee8753042, type: 3}
   - {fileID: 8300000, guid: dc2e9245edcdcd0f6a2c069c7b47b513, type: 3}
-  minWait: 3
-  maxWait: 10
+  minWait: 5
+  maxWait: 15

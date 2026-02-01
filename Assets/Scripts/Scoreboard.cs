@@ -20,28 +20,20 @@ public class Scoreboard : MonoBehaviour
 
     void Update()
     {
-        // float currentTime = timer.GetTime();
-
-        // if (lastTime != timer.gameLength && (int) (currentTime / scoringInterval) != (int) (lastTime / scoringInterval))
-        // {
-        //     UpdateScore();
-        // }
-
-        // lastTime = currentTime;
+        UpdateScore();
     }
 
     private void UpdateScore()
     {
         CalculateScore();
-        scoretext.text = "Score\n" + score.ToString("000000");
+        scoretext.text = "Score\n" + score.ToString();
     }
 
     private void CalculateScore()
     {
         int totalCount = CountTracker.Instance.GetTotalPredatorCount();
-        int lowestCount = CountTracker.Instance.GetLowestPredatorCount();
-
-        score += totalCount * lowestCount;
+        int modifier = CountTracker.Instance.GetNumberWithAnimals();
+        score = totalCount * modifier;
     }
 
     private void EndOfGameScore()
