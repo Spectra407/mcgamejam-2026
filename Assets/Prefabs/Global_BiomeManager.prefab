@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3684579533633142323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019502458254615596}
+  - component: {fileID: 3380121402464319561}
+  m_Layer: 0
+  m_Name: Global_BiomeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019502458254615596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3684579533633142323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3380121402464319561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3684579533633142323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5903dc9eabc225ea4b90ef76a28bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BiomeManager
+  allBiomes:
+  - {fileID: 11400000, guid: aa7772b7feb9aa84183ef528d5724953, type: 2}
+  - {fileID: 11400000, guid: da241a3343808834f99123df8840731d, type: 2}
+  - {fileID: 11400000, guid: b0b0b23923dd3e3439b7e972a60d53e3, type: 2}
+  - {fileID: 11400000, guid: dcc26cc6a43e5054786c2c9bb280f2cd, type: 2}
+  - {fileID: 11400000, guid: 6bc463509f046b048b824f50c7ad8df9, type: 2}
+  biomeMappings:
+  - type: 0
+    tileAsset: {fileID: 11400000, guid: 661c3b1e66ff9d242a2c57f6abcf4d1e, type: 2}
+  - type: 1
+    tileAsset: {fileID: 11400000, guid: c5c14811b7f08a84f85397d745b5c608, type: 2}
+  - type: 2
+    tileAsset: {fileID: 11400000, guid: a6e6242ad398de9498e66d051b9a732b, type: 2}
+  - type: 3
+    tileAsset: {fileID: 11400000, guid: e72277576dbf6c64bbd577d7f01c9a79, type: 2}
+  - type: 4
+    tileAsset: {fileID: 11400000, guid: 51cf1c7a6de2caf4fbb9c0c80cf169da, type: 2}
