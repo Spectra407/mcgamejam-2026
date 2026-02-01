@@ -9,7 +9,7 @@ public class GameOverScreen : MonoBehaviour
 
     public Scoreboard scoreboard;
     
-    public SpriteRenderer gameOverBox;
+    public Canvas gameOverBox;
     
     private bool started = false;
     
@@ -20,8 +20,7 @@ public class GameOverScreen : MonoBehaviour
         if (started) return;
         started = true;
         
-        gameOverScore.gameObject.SetActive(false);
-        gameOverBox.gameObject.SetActive(false);
+        GetComponent<Canvas>(gameOverBox).enabled = false;
         StartCoroutine(ShowText());
 
     }
@@ -30,8 +29,7 @@ public class GameOverScreen : MonoBehaviour
     {
         yield return new WaitForSeconds(301);
         gameOverScore.text = scoreboard.endOfGameScore;
-        gameOverScore.gameObject.SetActive(true);
-        gameOverBox.gameObject.SetActive(true);
+        GetComponent<Canvas>(gameOverBox).enabled = true;
     }
 
     // Update is called once per frame
