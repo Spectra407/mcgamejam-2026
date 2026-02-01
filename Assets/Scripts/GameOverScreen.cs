@@ -18,7 +18,7 @@ public class GameOverScreen : MonoBehaviour
 
     }
 
-    public IEnumerator ShowText()
+    public IEnumerator<yield> ShowText()
     {
         yield return new WaitForSeconds(5);
         gameOverScore.text = scoreboard.endOfGameScore;
