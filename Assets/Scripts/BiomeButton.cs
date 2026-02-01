@@ -14,21 +14,21 @@ public class BiomeButton : MonoBehaviour
         {
             paintingHandler.SetSelectedBiome(type);
             // disable all arrows
-            GameObject.Find("Arrow Plains").SetActive(false);
-            GameObject.Find("Arrow Forest").SetActive(false);
-            GameObject.Find("Arrow Desert").SetActive(false);
-            GameObject.Find("Arrow Snow").SetActive(false);
-            GameObject.Find("Arrow Wetland").SetActive(false);
+            GameObject.Find("Arrow Plains").GetComponent<Image>().enabled = false;
+            GameObject.Find("Arrow Forest").GetComponent<Image>().enabled = false;
+            GameObject.Find("Arrow Desert").GetComponent<Image>().enabled = false;
+            GameObject.Find("Arrow Snow").GetComponent<Image>().enabled = false;
+            GameObject.Find("Arrow Wetland").GetComponent<Image>().enabled = false;
             // enable arrow of this type
             Debug.Log(type.ToString());
-            GameObject.Find("Arrow " + type.ToString()).SetActive(true);
+            GameObject.Find("Arrow " + type.ToString()).GetComponent<Image>().enabled = true;
         });
         // disable all arrows aside from desert
-        GameObject.Find("Arrow Plains").SetActive(false);
-        GameObject.Find("Arrow Forest").SetActive(false);
-        GameObject.Find("Arrow Desert").SetActive(true);
-        GameObject.Find("Arrow Snow").SetActive(false);
-        GameObject.Find("Arrow Wetland").SetActive(false);
+        GameObject.Find("Arrow Plains").GetComponent<Image>().enabled = false;
+        GameObject.Find("Arrow Forest").GetComponent<Image>().enabled = false;
+        GameObject.Find("Arrow Desert").GetComponent<Image>().enabled = true;
+        GameObject.Find("Arrow Snow").GetComponent<Image>().enabled = false;
+        GameObject.Find("Arrow Wetland").GetComponent<Image>().enabled = false;
     }
 
     // Update is called once per frame
